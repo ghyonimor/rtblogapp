@@ -8,7 +8,7 @@
 	        redirectTo: '/posts'})
 	    .when('/posts/:param?', {
 	        templateUrl: 'posts.html',
-	        contoller: 'PostsCtrl'})
+	        controller: 'PostsCtrl'})
 	    .when('/post/:param?', {
 	        templateUrl: 'post.html',
 	        controller: 'PostCtrl'});
@@ -41,7 +41,7 @@
 		};
 	}]);
 
-	app.factory('myService', function($http, $q) {
+	app.factory('myService', ['$http', '$q', function($http, $q) {
 	    var deffered = $q.defer();
 	    var data = [];
 	    var myService = {};
@@ -58,5 +58,5 @@
 	  	myService.data = function() { return data; };
 
 	  	return myService;
-	});
+	}]);
 }());

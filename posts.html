@@ -1,10 +1,8 @@
 <!-- Blog Entries Column -->
 <section class="col-md-8">
 	<h1 class="page-header">All Posts</h1>
-	{{ data }}
-
 	<!-- Begin Post -->
-	<article ng-repeat="post in data">
+	<article ng-repeat="post in data.posts">
 		<header>
 			<h2>
 				<a href="post.html">{{ post.title }}</a>
