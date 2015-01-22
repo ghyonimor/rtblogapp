@@ -1,0 +1,58 @@
+<!-- Blog Entries Column -->
+<section class="col-md-8">
+	<h1 class="page-header">All Posts</h1>
+	{{ data }}
+
+	<!-- Begin Post -->
+	<article ng-repeat="post in data">
+		<header>
+			<h2>
+				<a href="post.html">{{ post.title }}</a>
+			</h2>
+
+			<p>
+				<small class="glyphicon glyphicon-user"></small>
+				by <a href="#">Ilan Cohen</a>
+			</p>
+			<p>
+				<small class="glyphicon glyphicon-time"></small>
+				Posted on 14 Jan, 2015
+			</p>
+		</header>
+		<hr>
+
+		<figure>
+			<img class="img-responsive" src="http://placehold.it/900x300"
+				alt="">
+		</figure>
+		<hr>
+
+		<!-- Post Description -->
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis debitis suscipit assumenda unde possimus, culpa voluptatum ducimus delectus, recusandae fuga eaque porro nam fugiat vel, illo reiciendis corporis quae?</p>
+		<br>
+
+		<footer class="clearfix">
+			<p class="pull-left">
+				<b>Tags:&nbsp;</b>
+				<a href="#" class="label label-default">JavaScript</a>
+				<a href="#" class="label label-default">AngularJS</a>
+			</p>
+
+			<a class="btn btn-primary pull-right" href="post.html">
+				Read More <i class="glyphicon glyphicon-chevron-right"></i>
+			</a>
+		</footer>
+	</article>
+	<hr>
+	<!-- End of Post -->
+
+	<!-- Pager -->
+	<ul class="pager">
+		<li class="previous">
+			<a href="#">&larr; Older</a>
+		</li>
+		<li class="next">
+			<a href="#">Newer &rarr;</a>
+		</li>
+	</ul>
+</section>
