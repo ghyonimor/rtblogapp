@@ -5,35 +5,34 @@
 	<article ng-repeat="post in data.posts">
 		<header>
 			<h2>
-				<a href="post.html">{{ post.title }}</a>
+				<a href="#">{{ post.titles }}</a>
 			</h2>
 
 			<p>
 				<small class="glyphicon glyphicon-user"></small>
-				by <a href="#">Ilan Cohen</a>
+				by <a href="#">{{ post.author }}</a>
 			</p>
 			<p>
 				<small class="glyphicon glyphicon-time"></small>
-				Posted on 14 Jan, 2015
+				Posted on {{ post.date | date }}
 			</p>
 		</header>
 		<hr>
 
 		<figure>
-			<img class="img-responsive" src="http://placehold.it/900x300"
+			<img class="img-responsive" src="{{ post.image }}"
 				alt="">
 		</figure>
 		<hr>
 
 		<!-- Post Description -->
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis debitis suscipit assumenda unde possimus, culpa voluptatum ducimus delectus, recusandae fuga eaque porro nam fugiat vel, illo reiciendis corporis quae?</p>
+		<p>{{ post.description }}</p>
 		<br>
 
 		<footer class="clearfix">
 			<p class="pull-left">
 				<b>Tags:&nbsp;</b>
-				<a href="#" class="label label-default">JavaScript</a>
-				<a href="#" class="label label-default">AngularJS</a>
+				<a href="#" class="label label-default post-tag" ng-repeat="tag in post.tags">{{ tag }}</a>
 			</p>
 
 			<a class="btn btn-primary pull-right" href="post.html">

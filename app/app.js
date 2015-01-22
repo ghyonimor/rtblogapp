@@ -15,14 +15,12 @@
 	}]);
 
 	app.controller('PostsCtrl', ['$scope', 'myService', function($scope, myService) {
-		alert('posts');
 		myService.async().then(function() {
 			$scope.data = myService.data();
 		});
 	}]);
 
 	app.controller('PostCtrl', ['$scope', function($scope) {
-		alert('post');
 	}]);
 
 	app.controller('NavCtrl', ['$scope', '$location', function($scope, $location) {
