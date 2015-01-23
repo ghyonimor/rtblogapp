@@ -40,11 +40,8 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="ng-class: activate('/posts')">
-							<a href="#/posts">All Posts</a>
-						</li>
-						<li class="ng-class: activate('/admin')">
-							<a href="#/admin">Admin</a>
+						<li class="ng-class: activate($index)" ng-repeat="tab in data.tabs">
+							<a href="#/{{ tab.url }}">{{ tab.url }}</a>
 						</li>
 					</ul>
 				</div>

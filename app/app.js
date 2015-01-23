@@ -11,26 +11,24 @@
 	        controller: 'PostsCtrl'})
 	    .when('/post/:param?', {
 	        templateUrl: 'post.html',
-	        controller: 'PostCtrl'});
+	        controller: 'PostCtrl'})
+	    .when('/admin/:param?', {
+	    	templateUrl: 'admin.html',
+	    	controller: 'AdminCtrl'
+	    });
 	}]);
 
-	app.controller('PostsCtrl', ['$scope', 'myService', function($scope, myService) {
-		myService.async().then(function() {
-			$scope.data = myService.data();
+	app.controller('NavCtrl', ['$scope', 'navService', 'activeService',
+		function($scope, navService, activeService) {
+
+		var promise = navService.navElms;
+
+		promise.then(function(result){
+			$scope.data = result.data;
 		});
-	}]);
 
-	app.controller('PostCtrl', ['$scope', function($scope) {
-	}]);
-
-	app.controller('NavCtrl', ['$scope', '$location', function($scope, $location) {
-		$scope.$on('$locationChangeSuccess', function(){
-		  $scope.active = $location.$$url;
-		});
-		$scope.activate = function(url) {
-			if (($scope.active.indexOf(url) === 0) &&
-				($scope.active.indexOf('?filter=') === -1) &&
-				($scope.active.indexOf('&filter=') === -1)) {
+		$scope.activate = function($index) {
+			if ($index === activeService.data) {
 				return 'active';
 			}
 			else {
@@ -39,22 +37,45 @@
 		};
 	}]);
 
-	app.factory('myService', ['$http', '$q', function($http, $q) {
-	    var deffered = $q.defer();
-	    var data = [];
-	    var myService = {};
+	app.controller('PostsCtrl', ['$scope', 'postsService', 'activeService',
+		function($scope, postsService, activeService) {
 
-	    myService.async = function() {
-	        $http.get('data/posts.json')
-	        .success(function (d) {
-	            data = d;
-	            console.log(d);
-	      		deffered.resolve();
-	    	});
-	    	return deffered.promise;
-	  	};
-	  	myService.data = function() { return data; };
+		var promise = postsService.getPosts;
 
-	  	return myService;
+		promise.then(function(result) {
+			$scope.data = result.data;
+			console.log($scope.data);
+		});
+		activeService.data = 0;
 	}]);
+
+	app.controller('PostCtrl', ['$scope', function($scope) {
+
+	}]);
+
+	app.controller('AdminCtrl', ['$scope', 'activeService', function($scope, activeService) {
+		activeService.data = 1;
+	}]);
+
+	app.factory('postsService', ['$http', function($http) {
+		var getPosts = $http.get('data/posts.json');
+
+		return {
+			getPosts: getPosts
+		};
+	}]);
+
+	app.factory('navService', ['$http', function($http) {
+	    var navElms = $http.get('data/nav.json');
+
+	    return {
+	    	navElms: navElms
+	    };
+	}]);
+
+	app.factory('activeService', function() {
+		return {
+			data: null
+		};
+	});
 }());
