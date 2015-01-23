@@ -45,7 +45,7 @@
 	    var myService = {};
 
 	    myService.async = function() {
-	        $http.get('/data/posts.json')
+	        $http.get('../data/posts.json')
 	        .success(function (d) {
 	            data = d;
 	            console.log(d);
