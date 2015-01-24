@@ -37,8 +37,8 @@
 		};
 	}]);
 
-	app.controller('PostsCtrl', ['$scope', 'postsService', 'activeService',
-		function($scope, postsService, activeService) {
+	app.controller('PostsCtrl', ['$scope', 'postsService', 'activeService', 'sanitizeService',
+		function($scope, postsService, activeService, sanitizeService) {
 
 		var promise = postsService.getPosts;
 
@@ -46,20 +46,28 @@
 			$scope.data = result.data;
 		});
 
+		$scope.sanitize = sanitizeService.getUrl;
+
 		activeService.data = 0;
+
+		$scope.$on('$destroy', function(){
+	        activeService.data = null;
+	    });
 	}]);
 
-	app.controller('PostCtrl', ['$scope', '$routeParams', 'postsService',
-		function($scope, $routeParams, postsService) {
+	app.controller('PostCtrl', ['$scope', '$routeParams', 'postsService', 'sanitizeService',
+		function($scope, $routeParams, postsService, sanitizeService) {
 
 		var promise = postsService.getPosts;
 
 		$scope.url = $routeParams.param;
 
+		$scope.sanitize = sanitizeService.getUrl;
+
 		promise.then(function(result) {
 			$scope.data = result.data;
 			for (var i = 0; i < $scope.data.posts.length; i++) {
-				if  ($scope.url === $scope.data.posts[i].titles) {
+				if  ($scope.url === $scope.sanitize($scope.data.posts[i].titles)) {
 					$scope.single = $scope.data.posts[i];
 				}
 			}
@@ -68,6 +76,10 @@
 
 	app.controller('AdminCtrl', ['$scope', 'activeService', function($scope, activeService) {
 		activeService.data = 1;
+
+		$scope.$on('$destroy', function(){
+	        activeService.data = null;
+	    });
 	}]);
 
 	app.factory('postsService', ['$http', function($http) {
@@ -89,6 +101,25 @@
 	app.factory('activeService', function() {
 		return {
 			data: null
+		};
+	});
+
+	app.factory('sanitizeService', function() {
+
+		var getUrl = function(url){
+			console.log(url);
+			for (var i = 0; i < url.length; i++) {
+				if (url[i] === ' ' || url[i] === '_') {
+					console.log(i);
+					url = url.substr(0, i) + url.substr(i + 1, url.length);
+					console.log(url);
+				}
+			}
+			return url;
+		};
+
+		return {
+			getUrl: getUrl
 		};
 	});
 }());
