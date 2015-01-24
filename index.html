@@ -103,13 +103,13 @@
 						</div>
 
 						<h4><small class="glyphicon glyphicon-time"></small> Month</h4>
-						<div class="list-group">
+						<div class="list-group" ng-repeat="(key, value) in years">
 							<span href="#/posts/" class="list-group-item disabled">
-								2015
+								{{ key }}
 							</span>
-							<a href="#/posts/" class="list-group-item">
-								<span class="badge">4</span>
-								January
+							<a href="#/posts/" class="list-group-item" ng-repeat="(key2, value2) in value">
+								<span class="badge">{{ value2 }}</span>
+								{{ key2 }}
 							</a>
 						</div>
 					</div>

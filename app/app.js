@@ -141,7 +141,7 @@
 			 * "2015": {"Augost": "3", "November": "2"},
 			 * "2014": {"January": "1", "February": "2"}
 			 */
-			$scope.dates = {};
+			$scope.years = {};
 
 			$scope.numPosts = $scope.data.posts.length;
 
@@ -170,8 +170,18 @@
 					$scope.authors[author] = 1;
 				}
 
-				console.log(year);
-				console.log(month);
+				if ($scope.years[year]) {
+					if ($scope.years[year][month]) {
+						$scope.years[year][month] = $scope.years[year][month] + 1;
+					}
+					else {
+						$scope.years[year][month] = 1;
+					}
+				}
+				else {
+					$scope.years[year] = {};
+					$scope.years[year][month] = 1;
+				}
 			}
 		});
 	}]);
