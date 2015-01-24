@@ -4,26 +4,25 @@
 	<!-- Begin Post -->
 	<article>
 		<header>
-			<h1 class="page-header">AngularJS - Controllers</h1>
+			<h1 class="page-header">{{ single.titles }}</h1>
 
 			<p>
 				<small class="glyphicon glyphicon-user"></small>
-				by <a href="#">Ilan Cohen</a>
+				by <a href="#">{{ single.author }}</a>
 			</p>
 			<p>
 				<small class="glyphicon glyphicon-time"></small>
-				Posted on 14 Jan, 2015
+				Posted on {{ single.date | date }}
 			</p>
 			<p>
 				<b>Tags:&nbsp;</b>
-				<a href="#" class="label label-default">JavaScript</a>
-				<a href="#" class="label label-default">AngularJS</a>
+				<a href="#" class="label label-default post-tag" ng-repeat="tag in single.tags">{{ tag }}</a>
 			</p>
 		</header>
 		<hr>
 
 		<figure>
-			<img class="img-responsive" src="http://placehold.it/900x300"
+			<img class="img-responsive" src="{{ single.image }}"
 				alt="">
 		</figure>
 		<hr>
@@ -32,7 +31,7 @@
 
 		<!-- ENTER CONTENT HERE -->
 
-		<ng-include src="'data/posts/AngularJS - Controllers.html'"></ng-include>
+		<ng-include src="'data/posts/' + url +'.html'"></ng-include>
 
 		<!-- End of Post Content -->
 

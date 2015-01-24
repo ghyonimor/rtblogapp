@@ -1,9 +1,11 @@
 {
 	"tabs": [
 		{
+			"name": "All posts",
 			"url": "posts"
 		},
 		{
+			"name": "Admin",
 			"url": "admin"
 		}
 	]

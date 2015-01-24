@@ -44,13 +44,26 @@
 
 		promise.then(function(result) {
 			$scope.data = result.data;
-			console.log($scope.data);
 		});
+
 		activeService.data = 0;
 	}]);
 
-	app.controller('PostCtrl', ['$scope', function($scope) {
+	app.controller('PostCtrl', ['$scope', '$routeParams', 'postsService',
+		function($scope, $routeParams, postsService) {
 
+		var promise = postsService.getPosts;
+
+		$scope.url = $routeParams.param;
+
+		promise.then(function(result) {
+			$scope.data = result.data;
+			for (var i = 0; i < $scope.data.posts.length; i++) {
+				if  ($scope.url === $scope.data.posts[i].titles) {
+					$scope.single = $scope.data.posts[i];
+				}
+			}
+		});
 	}]);
 
 	app.controller('AdminCtrl', ['$scope', 'activeService', function($scope, activeService) {
