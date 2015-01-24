@@ -80,28 +80,25 @@
 
 						<div class="list-group">
 							<a href="#/" class="list-group-item active">
-								<span class="badge">8</span>
+								<span class="badge">{{ numPosts }}</span>
 								Show All Posts
 							</a>
 						</div>
 
 						<h4><small class="glyphicon glyphicon-tag"></small> Category</h4>
 						<div class="list-group">
-							<a href="#/posts/" class="list-group-item">
-								<span class="badge">6</span>
-								JavaScript
-							</a>
-							<a href="#/posts/" class="list-group-item">
-								<span class="badge">6</span>
-								JavaScript
+							<a href="#/posts/" class="list-group-item"
+							ng-repeat="(key, value) in categories">
+								<span class="badge">{{ value }}</span>
+								{{ key }}
 							</a>
 						</div>
 
 						<h4><small class="glyphicon glyphicon-user"></small> Author</h4>
 						<div class="list-group">
-							<a href="#/posts/" class="list-group-item">
-								<span class="badge">4</span>
-								Ilan Cohen
+							<a href="#/posts/" class="list-group-item" ng-repeat="(key, value) in authors">
+								<span class="badge">{{ value }}</span>
+								{{ key }}
 							</a>
 						</div>
 

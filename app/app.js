@@ -107,12 +107,9 @@
 	app.factory('sanitizeService', function() {
 
 		var getUrl = function(url){
-			console.log(url);
 			for (var i = 0; i < url.length; i++) {
 				if (url[i] === ' ' || url[i] === '_') {
-					console.log(i);
 					url = url.substr(0, i) + url.substr(i + 1, url.length);
-					console.log(url);
 				}
 			}
 			return url;
@@ -123,12 +120,13 @@
 		};
 	});
 
-	app.controller('FiltersCtrl', ['$scope', 'postsService', function($scope, postsService){
+	app.controller('FiltersCtrl', ['$scope', '$filter', 'postsService',
+		function($scope, $filter, postsService){
+
 		var promise = postsService.getPosts;
 
 		promise.then(function(result) {
 			$scope.data = result.data;
-			console.log($scope.data);
 			/**
 			 * "category": "num of posts"
 			 */
@@ -138,27 +136,40 @@
 			 */
 			$scope.authors = {};
 			/**
-			 * "month": "num of posts"
+			 * "Year": {"Month": "numPosts"}
+			 *
+			 * "2015": {"Augost": "3", "November": "2"},
+			 * "2014": {"January": "1", "February": "2"}
 			 */
-			$scope.months = {};
+			$scope.dates = {};
+
+			$scope.numPosts = $scope.data.posts.length;
 
 			for (var i = 0; i < $scope.data.posts.length; i++) {
-				var post = $scope.data.posts[i];
+				var post = $scope.data.posts[i],
+					author = post.author,
+					date = post.date;
 
 				for (var j = 0; j < post.tags.length; j++) {
 					var tag = post.tags[j];
 
-					console.log(tag);
 					if ($scope.categories[tag]) {
 						$scope.categories[tag] = $scope.categories[tag] + 1;
 					}
 					else {
 						$scope.categories[tag] = 1;
 					}
-					console.log($scope.categories);
 				}
 
+				if ($scope.authors[author]) {
+					$scope.authors[author] = $scope.authors[author] + 1;
+				}
+				else {
+					$scope.authors[author] = 1;
+				}
 
+				console.log($filter('date')(date, 'yyyy'));
+				console.log($filter('date')(date, 'MMMM'));
 			}
 		});
 	}]);
