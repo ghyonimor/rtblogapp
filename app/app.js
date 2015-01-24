@@ -122,4 +122,44 @@
 			getUrl: getUrl
 		};
 	});
+
+	app.controller('FiltersCtrl', ['$scope', 'postsService', function($scope, postsService){
+		var promise = postsService.getPosts;
+
+		promise.then(function(result) {
+			$scope.data = result.data;
+			console.log($scope.data);
+			/**
+			 * "category": "num of posts"
+			 */
+			$scope.categories = {};
+			/**
+			 * "author": "num of posts"
+			 */
+			$scope.authors = {};
+			/**
+			 * "month": "num of posts"
+			 */
+			$scope.months = {};
+
+			for (var i = 0; i < $scope.data.posts.length; i++) {
+				var post = $scope.data.posts[i];
+
+				for (var j = 0; j < post.tags.length; j++) {
+					var tag = post.tags[j];
+
+					console.log(tag);
+					if ($scope.categories[tag]) {
+						$scope.categories[tag] = $scope.categories[tag] + 1;
+					}
+					else {
+						$scope.categories[tag] = 1;
+					}
+					console.log($scope.categories);
+				}
+
+
+			}
+		});
+	}]);
 }());
