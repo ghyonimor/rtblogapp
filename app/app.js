@@ -148,7 +148,9 @@
 			for (var i = 0; i < $scope.data.posts.length; i++) {
 				var post = $scope.data.posts[i],
 					author = post.author,
-					date = post.date;
+					date = post.date,
+					year = $filter('date')(date, 'yyyy'),
+					month = $filter('date')(date, 'MMMM');
 
 				for (var j = 0; j < post.tags.length; j++) {
 					var tag = post.tags[j];
@@ -168,8 +170,8 @@
 					$scope.authors[author] = 1;
 				}
 
-				console.log($filter('date')(date, 'yyyy'));
-				console.log($filter('date')(date, 'MMMM'));
+				console.log(year);
+				console.log(month);
 			}
 		});
 	}]);
