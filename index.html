@@ -88,7 +88,7 @@
 						<h4><small class="glyphicon glyphicon-tag"></small> Category</h4>
 						<div class="list-group">
 							<a href="#/posts/" class="list-group-item"
-							ng-repeat="key in keys">
+							ng-repeat="key in keyUp(categories)">
 								<span class="badge">{{ categories[key] }}</span>
 								{{ key }}
 							</a>
@@ -96,19 +96,19 @@
 
 						<h4><small class="glyphicon glyphicon-user"></small> Author</h4>
 						<div class="list-group">
-							<a href="#/posts/" class="list-group-item" ng-repeat="(key, value) in authors">
-								<span class="badge">{{ value }}</span>
+							<a href="#/posts/" class="list-group-item" ng-repeat="key in keyUp(authors)">
+								<span class="badge">{{ authors[key] }}</span>
 								{{ key }}
 							</a>
 						</div>
 
 						<h4><small class="glyphicon glyphicon-time"></small> Month</h4>
-						<div class="list-group" ng-repeat="(key, value) in years">
+						<div class="list-group" ng-repeat="key in keyUp(years)">
 							<span href="#/posts/" class="list-group-item disabled">
 								{{ key }}
 							</span>
-							<a href="#/posts/" class="list-group-item" ng-repeat="(key2, value2) in value">
-								<span class="badge">{{ value2 }}</span>
+							<a href="#/posts/" class="list-group-item" ng-repeat="key2 in keyUp(years[key])">
+								<span class="badge">{{ years[key][key2] }}</span>
 								{{ key2 }}
 							</a>
 						</div>

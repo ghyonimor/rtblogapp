@@ -184,7 +184,9 @@
 					$scope.years[year][month] = 1;
 				}
 			}
-			$scope.keys = Object.keys($scope.categories);
+			$scope.keyUp = function(elm) {
+				return Object.keys(elm);
+			};
 		});
 	}]);
 }());
