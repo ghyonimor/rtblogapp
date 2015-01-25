@@ -1,7 +1,7 @@
 (function () {
 	'use strict';
 
-	var app = angular.module('BlogApp', ['ngRoute']);
+	var app = angular.module('BlogApp', ['ngRoute', 'angular-toArrayFilter']);
 
 	app.config(['$routeProvider', function($routeProvider) {
 	    $routeProvider.when('/', {
