@@ -120,8 +120,8 @@
 		};
 	});
 
-	app.controller('FiltersCtrl', ['$scope', '$filter', 'postsService',
-		function($scope, $filter, postsService){
+	app.controller('FiltersCtrl', ['$scope', '$filter', 'postsService', 'sanitizeService',
+		function($scope, $filter, postsService, sanitizeService){
 
 		var promise = postsService.getPosts;
 
@@ -145,6 +145,12 @@
 			$scope.years = {};
 
 			$scope.numPosts = $scope.data.posts.length;
+
+			$scope.keyUp = function(elm) {
+				return Object.keys(elm);
+			};
+
+			$scope.sanitize = sanitizeService.getUrl;
 
 			for (var i = 0; i < $scope.data.posts.length; i++) {
 				var post = $scope.data.posts[i],
@@ -184,9 +190,6 @@
 					$scope.years[year][month] = 1;
 				}
 			}
-			$scope.keyUp = function(elm) {
-				return Object.keys(elm);
-			};
 		});
 	}]);
 }());
