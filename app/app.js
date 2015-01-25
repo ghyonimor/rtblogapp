@@ -131,6 +131,7 @@
 			 * "category": "num of posts"
 			 */
 			$scope.categories = {};
+
 			/**
 			 * "author": "num of posts"
 			 */
@@ -183,6 +184,7 @@
 					$scope.years[year][month] = 1;
 				}
 			}
+			$scope.keys = Object.keys($scope.categories);
 		});
 	}]);
 }());

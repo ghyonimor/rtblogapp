@@ -88,8 +88,8 @@
 						<h4><small class="glyphicon glyphicon-tag"></small> Category</h4>
 						<div class="list-group">
 							<a href="#/posts/" class="list-group-item"
-							ng-repeat="(key, value) in categories">
-								<span class="badge">{{ value }}</span>
+							ng-repeat="key in keys">
+								<span class="badge">{{ categories[key] }}</span>
 								{{ key }}
 							</a>
 						</div>
