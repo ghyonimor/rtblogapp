@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"route",
+				"routeParams"
+			],
+			[
+				"rou",
+				"routeChangeSuccess"
+			],
+			[
 				"sa",
 				"sanitizeService"
 			],
@@ -467,7 +475,15 @@
 			"file": "app/app.js",
 			"settings":
 			{
-				"buffer_size": 4777,
+				"buffer_size": 5316,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "data/posts.json",
+			"settings":
+			{
+				"buffer_size": 2062,
 				"line_ending": "Windows"
 			}
 		}
@@ -522,6 +538,7 @@
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/data",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/data/posts",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/lib",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/lib/css",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/lib/js",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/public",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/public/css"
@@ -658,6 +675,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"routechange",
+			"log",
 			"routeparam",
 			"sort()",
 			"collection",
@@ -783,8 +802,6 @@
 			"ajax",
 			"calc",
 			"20px",
-			"calc",
-			"1079",
 			"calc"
 		],
 		"highlight": true,
@@ -803,7 +820,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -819,8 +836,8 @@
 						"selection":
 						[
 							[
-								2919,
-								2919
+								1127,
+								1127
 							]
 						],
 						"settings":
@@ -829,10 +846,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1074.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -841,15 +858,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4777,
+						"buffer_size": 5316,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2839,
-								2839
+								1696,
+								1696
 							]
 						],
 						"settings":
@@ -858,10 +875,39 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1824.0,
+						"translation.y": 591.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "data/posts.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2062,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

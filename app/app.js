@@ -37,14 +37,33 @@
 		};
 	}]);
 
-	app.controller('PostsCtrl', ['$scope', 'postsService', 'activeService', 'sanitizeService',
-		function($scope, postsService, activeService, sanitizeService) {
+	app.controller('PostsCtrl', ['$scope','$route','$routeParams', 'postsService', 'activeService', 'sanitizeService',
+		function($scope, $route, $routeParams, postsService, activeService, sanitizeService) {
 
 		var promise = postsService.getPosts;
 
+		var pages = [];
+
 		promise.then(function(result) {
 			$scope.data = result.data;
+			var len = $scope.data.posts.length;
+			if (len < 3) {
+				console.log('do nothing');
+			}
+
+			if (len > 3) {
+				var pagesNum = len % 3 + 1;
+				for (var i = 1; i < pagesNum + 1; i++) {
+					pages[i] = [];
+					for (var j = i* 3 - 3; j < i * 3; j++) {
+						// The pages array contains array of the posts that will show on page pages[i].
+						pages[i].push($scope.data.posts[j]);
+					}
+				}
+			}
 		});
+
+		// Somehow edit $scope.data to be pages[i].
 
 		$scope.sanitize = sanitizeService.getUrl;
 
@@ -168,8 +187,6 @@
 					$scope.param = '';
 				}
 			});
-
-			console.log($scope.param);
 
 			for (var i = 0; i < $scope.data.posts.length; i++) {
 				var post = $scope.data.posts[i],
