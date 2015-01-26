@@ -120,8 +120,8 @@
 		};
 	});
 
-	app.controller('FiltersCtrl', ['$scope', '$filter', 'postsService', 'sanitizeService',
-		function($scope, $filter, postsService, sanitizeService){
+	app.controller('FiltersCtrl', ['$scope', '$filter', '$route', 'postsService', 'sanitizeService',
+		function($scope, $filter, $route, postsService, sanitizeService){
 
 		var promise = postsService.getPosts;
 
@@ -151,6 +151,25 @@
 			};
 
 			$scope.sanitize = sanitizeService.getUrl;
+
+			$scope.addFilter = function(url) {
+				return '?filter=' + url;
+			};
+
+			$scope.$on('$routeChangeSuccess', function() {
+				var param = $route.current.params.param;
+
+				var ctrl = $route.current.$$route.controller;
+
+				if (param && (ctrl === 'PostsCtrl')) {
+					$scope.param = '/' + param;
+				}
+				else {
+					$scope.param = '';
+				}
+			});
+
+			console.log($scope.param);
 
 			for (var i = 0; i < $scope.data.posts.length; i++) {
 				var post = $scope.data.posts[i],
