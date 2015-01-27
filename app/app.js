@@ -57,7 +57,9 @@
 					$scope.pages[i] = [];
 					for (var j = i* 3 - 3; j < i * 3; j++) {
 						// The pages array contains array of the posts that will show on page pages[i].
-						$scope.pages[i].push($scope.data.posts[j]);
+						if ($scope.data.posts[j]) {
+							$scope.pages[i].push($scope.data.posts[j]);
+						}
 					}
 				}
 			}
@@ -75,9 +77,9 @@
 			if ((!$scope.pages[$scope.currentPage + 1])) {
 				$('.previous').css('display', 'none');
 			}
-		});
 
-		// Somehow edit $scope.data to be pages[i].
+			console.log($scope.pages);
+		});
 
 		$scope.sanitize = sanitizeService.getUrl;
 
