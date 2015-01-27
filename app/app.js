@@ -68,6 +68,16 @@
 				$scope.currentPage = 1;
 			}
 
+			if (!$scope.pages[$scope.currentPage + 1]) {
+				console.log('Hide next button');
+				$('.next').css('display', 'none');
+			}
+
+			if ((!$scope.pages[$scope.currentPage - 1])) {
+				console.log('Hide previous button');
+				$('.previous').css('display', 'none');
+			}
+
 			console.log($scope.currentPage);
 			console.log($scope.pages[$scope.currentPage]);
 		});
