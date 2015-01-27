@@ -2,7 +2,7 @@
 <section class="col-md-8">
 	<h1 class="page-header">All Posts</h1>
 	<!-- Begin Post -->
-	<article ng-repeat="post in data.posts">
+	<article ng-repeat="post in pages[currentPage]">
 		<header>
 			<h2>
 				<a href="#/post/{{ sanitize(post.titles) }}">{{ post.titles }}</a>
@@ -46,10 +46,10 @@
 	<!-- Pager -->
 	<ul class="pager">
 		<li class="previous">
-			<a href="#">&larr; Older</a>
+			<a href="#posts/{{ currentPage - 1}}">&larr; Older</a>
 		</li>
 		<li class="next">
-			<a href="#">Newer &rarr;</a>
+			<a href="#posts/{{ currentPage + 1 }}">Newer &rarr;</a>
 		</li>
 	</ul>
 </section>

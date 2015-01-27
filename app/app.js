@@ -42,7 +42,7 @@
 
 		var promise = postsService.getPosts;
 
-		var pages = [];
+		$scope.pages = [];
 
 		promise.then(function(result) {
 			$scope.data = result.data;
@@ -54,13 +54,22 @@
 			if (len > 3) {
 				var pagesNum = len % 3 + 1;
 				for (var i = 1; i < pagesNum + 1; i++) {
-					pages[i] = [];
+					$scope.pages[i] = [];
 					for (var j = i* 3 - 3; j < i * 3; j++) {
 						// The pages array contains array of the posts that will show on page pages[i].
-						pages[i].push($scope.data.posts[j]);
+						$scope.pages[i].push($scope.data.posts[j]);
 					}
 				}
 			}
+
+			if ($routeParams.param) {
+				$scope.currentPage = Number($routeParams.param);
+			} else {
+				$scope.currentPage = 1;
+			}
+
+			console.log($scope.currentPage);
+			console.log($scope.pages[$scope.currentPage]);
 		});
 
 		// Somehow edit $scope.data to be pages[i].

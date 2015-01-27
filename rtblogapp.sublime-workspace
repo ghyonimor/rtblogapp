@@ -545,6 +545,7 @@
 	],
 	"file_history":
 	[
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/package.json",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/posts.html",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/index.html",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/data/posts.json",
@@ -560,7 +561,6 @@
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/Gruntfile.js",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/public/css/main.min.css",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/public/css/main.min.css.map",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/package.json",
 		"/C/Users/yoni/Desktop/Projects/BlogApp/data/posts.json",
 		"/C/Users/yoni/Desktop/Projects/BlogApp/data/Navigation/nav.json",
 		"/C/Users/yoni/Desktop/Projects/BlogApp/data/Filters/filters.json",
@@ -820,7 +820,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -846,10 +846,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1074.0,
+						"translation.y": 309.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -865,8 +865,8 @@
 						"selection":
 						[
 							[
-								1696,
-								1696
+								1697,
+								1697
 							]
 						],
 						"settings":
@@ -875,10 +875,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 591.0,
+						"translation.y": 897.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -903,11 +903,11 @@
 							"syntax": "Packages/JavaScript/JSON.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": -0.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
