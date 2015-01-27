@@ -184,18 +184,16 @@
 				return '?filter=' + url;
 			};
 
-			$scope.$on('$routeChangeSuccess', function() {
-				var param = $route.current.params.param;
+			var param = $route.current.params.param;
 
-				var ctrl = $route.current.$$route.controller;
+			var ctrl = $route.current.$$route.controller;
 
-				if (param && (ctrl === 'PostsCtrl')) {
-					$scope.param = '/' + param;
-				}
-				else {
-					$scope.param = '';
-				}
-			});
+			if (param && (ctrl === 'PostsCtrl')) {
+				$scope.param = '/' + param;
+			}
+			else {
+				$scope.param = '';
+			}
 
 			for (var i = 0; i < $scope.data.posts.length; i++) {
 				var post = $scope.data.posts[i],
