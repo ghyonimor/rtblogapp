@@ -142,11 +142,10 @@
 	app.factory('sanitizeService', function() {
 
 		var getUrl = function(url){
-			for (var i = 0; i < url.length; i++) {
-				if (url[i] === ' ' || url[i] === '_') {
-					url = url.substr(0, i) + url.substr(i + 1, url.length);
-				}
-			}
+			console.log(url);
+			url = url.replace(/[$+,:;=@#|'"<>.^*()%!/\s]/g, '');
+
+			console.log(url);
 			return url;
 		};
 
