@@ -69,17 +69,12 @@
 			}
 
 			if (!$scope.pages[$scope.currentPage - 1]) {
-				console.log('Hide next button');
 				$('.next').css('display', 'none');
 			}
 
 			if ((!$scope.pages[$scope.currentPage + 1])) {
-				console.log('Hide previous button');
 				$('.previous').css('display', 'none');
 			}
-
-			console.log($scope.currentPage);
-			console.log($scope.pages[$scope.currentPage]);
 		});
 
 		// Somehow edit $scope.data to be pages[i].
@@ -194,16 +189,18 @@
 				return '?filter=' + url;
 			};
 
-			var param = $route.current.params.param;
+			$scope.$on('$routeChangeSuccess', function() {
+				var param = $route.current.params.param;
 
-			var ctrl = $route.current.$$route.controller;
+				var ctrl = $route.current.$$route.controller;
 
-			if (param && (ctrl === 'PostsCtrl')) {
-				$scope.param = '/' + param;
-			}
-			else {
-				$scope.param = '';
-			}
+				if (param && (ctrl === 'PostsCtrl')) {
+					$scope.param = '/' + param;
+				}
+				else {
+					$scope.param = '';
+				}
+			});
 
 			for (var i = 0; i < $scope.data.posts.length; i++) {
 				var post = $scope.data.posts[i],
