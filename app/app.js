@@ -37,8 +37,9 @@
 		};
 	}]);
 
-	app.controller('PostsCtrl', ['$scope','$route','$routeParams', 'postsService', 'activeService', 'sanitizeService',
-		function($scope, $route, $routeParams, postsService, activeService, sanitizeService) {
+	app.controller('PostsCtrl', ['$scope', '$location', '$route','$routeParams',
+		'postsService', 'activeService', 'sanitizeService',
+		function($scope, $location, $route, $routeParams, postsService, activeService, sanitizeService) {
 
 		var promise = postsService.getPosts;
 
@@ -68,6 +69,9 @@
 				$scope.currentPage = Number($routeParams.param);
 			} else {
 				$scope.currentPage = 1;
+				if (len > 3) {
+					console.log('change route param');
+				}
 			}
 
 			if (!$scope.pages[$scope.currentPage - 1]) {
@@ -77,13 +81,13 @@
 			if ((!$scope.pages[$scope.currentPage + 1])) {
 				$('.previous').css('display', 'none');
 			}
-
-			console.log($scope.pages);
 		});
 
 		$scope.sanitize = sanitizeService.getUrl;
 
 		activeService.data = 0;
+
+		$scope.currentFilter = $location.search().filter ? '?filter=' + $location.search().filter : '';
 
 		$scope.$on('$destroy', function(){
 	        activeService.data = null;
@@ -142,10 +146,8 @@
 	app.factory('sanitizeService', function() {
 
 		var getUrl = function(url){
-			console.log(url);
 			url = url.replace(/[$+,:;=@#|'"<>.^*()%!/\s]/g, '');
 
-			console.log(url);
 			return url;
 		};
 
@@ -242,5 +244,31 @@
 				}
 			}
 		});
+	}]);
+
+	/**
+	 * TODO:
+	 * 1. Make filters last through all pages. DONE
+	 * 2. Make filters narrow the pages and gaps between posts.
+	 * (Note: The filter works per page [and not per posts] only).
+	 * 3. When a new filter starts, go to page 1.
+	 */
+	app.filter('filterPosts', ['$location', 'sanitizeService', function($location, sanitizeService) {
+	  return function(input) {
+	  	var output =[];
+	  	if ($location.search().filter) {
+		  	for (var i = 0; i < input.length; i++) {
+		  		var tags = input[i].tags;
+		  		var url = sanitizeService.getUrl($location.search().filter);
+		  		if (tags.indexOf(url) > -1) {
+		  			output.push(input[i]);
+		  		}
+		  	}
+		}
+		else {
+			output = input;
+		}
+	    return output;
+	  };
 	}]);
 }());

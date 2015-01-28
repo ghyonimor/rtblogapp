@@ -8,6 +8,14 @@
 				"routeParams"
 			],
 			[
+				"current",
+				"currentPage"
+			],
+			[
+				"curre",
+				"currentPage"
+			],
+			[
 				"rou",
 				"routeChangeSuccess"
 			],
@@ -464,26 +472,18 @@
 	"buffers":
 	[
 		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 4751,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "app/app.js",
 			"settings":
 			{
-				"buffer_size": 5316,
+				"buffer_size": 5613,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "data/posts.json",
+			"file": "posts.html",
 			"settings":
 			{
-				"buffer_size": 2062,
+				"buffer_size": 1287,
 				"line_ending": "Windows"
 			}
 		}
@@ -545,12 +545,12 @@
 	],
 	"file_history":
 	[
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/package.json",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/post.html",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/data/posts.json",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/posts.html",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/index.html",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/data/posts.json",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/package.json",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/lib/js/angular.min.js",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/post.html",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/preview.html",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/data/nav.json",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/admin.html",
@@ -675,6 +675,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"sanitize",
+			"sanititz",
 			"routechange",
 			"log",
 			"routeparam",
@@ -800,8 +802,6 @@
 			"options3",
 			"disp",
 			"ajax",
-			"calc",
-			"20px",
 			"calc"
 		],
 		"highlight": true,
@@ -825,48 +825,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4751,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1127,
-								1127
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 309.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "app/app.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5316,
+						"buffer_size": 5613,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1697,
-								1697
+								1826,
+								1826
 							]
 						],
 						"settings":
@@ -875,19 +846,19 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 897.0,
+						"translation.y": 802.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "data/posts.json",
+					"buffer": 1,
+					"file": "posts.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2062,
+						"buffer_size": 1287,
 						"regions":
 						{
 						},
@@ -900,7 +871,7 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
