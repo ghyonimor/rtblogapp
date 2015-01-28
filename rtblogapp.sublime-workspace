@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"page",
+				"pageData"
+			],
+			[
+				"get",
+				"getUrl"
+			],
+			[
 				"route",
 				"routeParams"
 			],
@@ -50,10 +58,6 @@
 			[
 				"post",
 				"postsService"
-			],
-			[
-				"get",
-				"getPosts"
 			],
 			[
 				"active",
@@ -472,18 +476,18 @@
 	"buffers":
 	[
 		{
-			"file": "app/app.js",
+			"file": "posts.html",
 			"settings":
 			{
-				"buffer_size": 5613,
+				"buffer_size": 1318,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "posts.html",
+			"file": "app/app.js",
 			"settings":
 			{
-				"buffer_size": 1287,
+				"buffer_size": 6888,
 				"line_ending": "Windows"
 			}
 		}
@@ -545,10 +549,10 @@
 	],
 	"file_history":
 	[
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/index.html",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/post.html",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/data/posts.json",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/posts.html",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/index.html",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/package.json",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/lib/js/angular.min.js",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/preview.html",
@@ -820,53 +824,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/app.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5613,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1826,
-								1826
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 802.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "posts.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1287,
+						"buffer_size": 1318,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								164,
+								164
 							]
 						],
 						"settings":
@@ -879,6 +854,35 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6888,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6887,
+								6887
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3752.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]

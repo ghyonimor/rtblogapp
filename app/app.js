@@ -37,9 +37,9 @@
 		};
 	}]);
 
-	app.controller('PostsCtrl', ['$scope', '$location', '$route','$routeParams',
+	app.controller('PostsCtrl', ['$scope', '$filter', '$location', '$route','$routeParams',
 		'postsService', 'activeService', 'sanitizeService',
-		function($scope, $location, $route, $routeParams, postsService, activeService, sanitizeService) {
+		function($scope, $filter, $location, $route, $routeParams, postsService, activeService, sanitizeService) {
 
 		var promise = postsService.getPosts;
 
@@ -53,7 +53,7 @@
 			}
 
 			if (len > 3) {
-				var pagesNum = len % 3 + 1;
+				var pagesNum = Math.ceil(len / 3);
 				for (var i = 1; i < pagesNum + 1; i++) {
 					$scope.pages[i] = [];
 					for (var j = i* 3 - 3; j < i * 3; j++) {
@@ -81,6 +81,9 @@
 			if ((!$scope.pages[$scope.currentPage + 1])) {
 				$('.previous').css('display', 'none');
 			}
+
+			$scope.pages = $filter('filterPosts')($scope.pages);
+			console.log($scope.pages);
 		});
 
 		$scope.sanitize = sanitizeService.getUrl;
@@ -256,17 +259,38 @@
 	app.filter('filterPosts', ['$location', 'sanitizeService', function($location, sanitizeService) {
 	  return function(input) {
 	  	var output =[];
-	  	if ($location.search().filter) {
+	  	var temp = [];
+	  	var filter = $location.search().filter;
+	  	var tags;
+	  	var pageData;
+	  	if (filter) {
 		  	for (var i = 0; i < input.length; i++) {
-		  		var tags = input[i].tags;
-		  		var url = sanitizeService.getUrl($location.search().filter);
-		  		if (tags.indexOf(url) > -1) {
-		  			output.push(input[i]);
+		  		pageData = input[i];
+		  		for (var obj in pageData) {
+		  			if( pageData.hasOwnProperty( obj ) ) {
+				    	var post = pageData[obj];
+				    	tags = post.tags;
+				    	if(tags.indexOf(filter) > -1) {
+				    		temp.push(post);
+				    	}
+				 	}
 		  		}
 		  	}
 		}
 		else {
-			output = input;
+			return input;
+		}
+	  	var len = temp.length;
+	  	// Number of pages.
+	  	var pagesNum = Math.ceil(len / 3);
+		for (var k = 1; k < pagesNum + 1; k++) {
+			output[k] = [];
+			for (var h = k * 3 - 3; h < k * 3; h++) {
+				// The pages array contains array of the posts that will show on page pages[i].
+				if (temp[h]) {
+					output[k].push(temp[h]);
+				}
+			}
 		}
 	    return output;
 	  };
