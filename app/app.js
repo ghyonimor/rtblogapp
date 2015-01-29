@@ -48,6 +48,7 @@
 		promise.then(function(result) {
 			$scope.data = result.data;
 			var len = $scope.data.posts.length;
+
 			if (len < 3) {
 				console.log('do nothing');
 			}
@@ -65,6 +66,8 @@
 				}
 			}
 
+			$scope.pages = $filter('filterPosts')($scope.pages);
+
 			if ($routeParams.param) {
 				$scope.currentPage = Number($routeParams.param);
 			} else {
@@ -81,9 +84,6 @@
 			if ((!$scope.pages[$scope.currentPage + 1])) {
 				$('.previous').css('display', 'none');
 			}
-
-			$scope.pages = $filter('filterPosts')($scope.pages);
-			console.log($scope.pages);
 		});
 
 		$scope.sanitize = sanitizeService.getUrl;
@@ -91,6 +91,12 @@
 		activeService.data = 0;
 
 		$scope.currentFilter = $location.search().filter ? '?filter=' + $location.search().filter : '';
+
+		$scope.$watch(function(){ return $location.search().filter; }, function(val, old){
+			if (val !== old) {
+				$location.path('posts/1');
+			}
+		}, true);
 
 		$scope.$on('$destroy', function(){
 	        activeService.data = null;
@@ -253,8 +259,9 @@
 	 * TODO:
 	 * 1. Make filters last through all pages. DONE
 	 * 2. Make filters narrow the pages and gaps between posts.
-	 * (Note: The filter works per page [and not per posts] only).
-	 * 3. When a new filter starts, go to page 1.
+	 * (Note: The filter works per page [and not per posts] only). DONE
+	 * 3. When a new filter starts, go to page 1. DONE
+	 * 4. Activate author and date filters.
 	 */
 	app.filter('filterPosts', ['$location', 'sanitizeService', function($location, sanitizeService) {
 	  return function(input) {

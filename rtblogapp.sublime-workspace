@@ -4,8 +4,20 @@
 		"selected_items":
 		[
 			[
+				"cur",
+				"currentFilter"
+			],
+			[
+				"current",
+				"currentFilter"
+			],
+			[
+				"pages",
+				"pagesNum"
+			],
+			[
 				"page",
-				"pageData"
+				"pagesNum"
 			],
 			[
 				"get",
@@ -14,10 +26,6 @@
 			[
 				"route",
 				"routeParams"
-			],
-			[
-				"current",
-				"currentPage"
 			],
 			[
 				"curre",
@@ -464,10 +472,6 @@
 				"currentTarget"
 			],
 			[
-				"cur",
-				"cursor"
-			],
-			[
 				"inline",
 				"inline-block"
 			]
@@ -475,6 +479,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 4751,
+				"line_ending": "Windows"
+			}
+		},
 		{
 			"file": "posts.html",
 			"settings":
@@ -487,7 +499,7 @@
 			"file": "app/app.js",
 			"settings":
 			{
-				"buffer_size": 6888,
+				"buffer_size": 7061,
 				"line_ending": "Windows"
 			}
 		}
@@ -824,11 +836,40 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4751,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1455.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
 					"file": "posts.html",
 					"semi_transient": false,
 					"settings":
@@ -857,20 +898,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 2,
 					"file": "app/app.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6888,
+						"buffer_size": 7061,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6887,
-								6887
+								2003,
+								2003
 							]
 						],
 						"settings":
@@ -879,7 +920,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3752.0,
+						"translation.y": 1035.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
