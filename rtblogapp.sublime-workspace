@@ -499,7 +499,7 @@
 			"file": "app/app.js",
 			"settings":
 			{
-				"buffer_size": 7061,
+				"buffer_size": 7261,
 				"line_ending": "Windows"
 			}
 		}
@@ -862,7 +862,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1455.0,
+						"translation.y": 375.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -903,15 +903,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7061,
+						"buffer_size": 7261,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2003,
-								2003
+								2533,
+								2533
 							]
 						],
 						"settings":
@@ -920,7 +920,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1035.0,
+						"translation.y": 1187.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

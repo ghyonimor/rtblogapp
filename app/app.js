@@ -93,7 +93,7 @@
 		$scope.currentFilter = $location.search().filter ? '?filter=' + $location.search().filter : '';
 
 		$scope.$watch(function(){ return $location.search().filter; }, function(val, old){
-			if (val !== old) {
+			if ($location.search().filter && (val !== old)) {
 				$location.path('posts/1');
 			}
 		}, true);
