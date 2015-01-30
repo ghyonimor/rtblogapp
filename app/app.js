@@ -261,9 +261,12 @@
 	 * 2. Make filters narrow the pages and gaps between posts.
 	 * (Note: The filter works per page [and not per posts] only). DONE
 	 * 3. When a new filter starts, go to page 1. DONE
-	 * 4. Activate author and date filters.
+	 * 4. Activate author and date filters. DONE
+	 * 5. Filter result array by date.
 	 */
-	app.filter('filterPosts', ['$location', 'sanitizeService', function($location, sanitizeService) {
+	app.filter('filterPosts', ['$location', '$filter','sanitizeService',
+		function($location, $filter, sanitizeService) {
+
 	  return function(input) {
 	  	var output =[];
 	  	var temp = [];
@@ -289,15 +292,32 @@
 				    	if (filter === sanitizeService.getUrl(author)) {
 				    		temp.push(post);
 				    	}
-				    	console.log(date);
-				    	console.log(filter);
+				    	var month = $filter('date')(date, 'MMMM');
+				    	var year = $filter('date')(date, 'yyyy');
+				    	if (filter === month + year) {
+				    		temp.push(post);
+				    	}
 				 	}
 		  		}
 		  	}
 		}
 		else {
-			return input;
+			for (var a = 0; a < input.length; a++) {
+		  		var page = input[a];
+		  		for (var postD in page) {
+		  			if( page.hasOwnProperty( postD ) ) {
+				    	var postd = page[postD];
+				    	temp.push(postd);
+				    }
+				}
+			}
 		}
+
+		// Filter temp array by date
+		temp.sort(function(a,b) { return parseFloat(b.date) - parseFloat(a.date); } );
+
+		console.log(temp);
+
 	  	var len = temp.length;
 	  	// Number of pages.
 	  	var pagesNum = Math.ceil(len / 3);
