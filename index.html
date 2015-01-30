@@ -107,7 +107,7 @@
 							<span href="#/posts/" class="list-group-item disabled">
 								{{ key }}
 							</span>
-							<a href="#/posts{{param + addFilter(sanitize(key2)) }}" class="list-group-item" ng-repeat="key2 in keyUp(years[key])">
+							<a href="#/posts{{param + addFilter(sanitize(key2) + key) }}" class="list-group-item" ng-repeat="key2 in keyUp(years[key])">
 								<span class="badge">{{ years[key][key2] }}</span>
 								{{ key2 }}
 							</a>

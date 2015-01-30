@@ -269,6 +269,8 @@
 	  	var temp = [];
 	  	var filter = $location.search().filter;
 	  	var tags;
+	  	var author;
+	  	var date;
 	  	var pageData;
 	  	if (filter) {
 		  	for (var i = 0; i < input.length; i++) {
@@ -277,9 +279,18 @@
 		  			if( pageData.hasOwnProperty( obj ) ) {
 				    	var post = pageData[obj];
 				    	tags = post.tags;
-				    	if(tags.indexOf(filter) > -1) {
+				    	author = post.author;
+				    	date = post.date;
+				    	for (var j = 0; j < tags.length; j++) {
+				    		if (tags[j] === filter) {
+				    			temp.push(post);
+				    		}
+				    	}
+				    	if (filter === sanitizeService.getUrl(author)) {
 				    		temp.push(post);
 				    	}
+				    	console.log(date);
+				    	console.log(filter);
 				 	}
 		  		}
 		  	}
