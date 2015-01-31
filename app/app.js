@@ -37,6 +37,13 @@
 		};
 	}]);
 
+	app.controller('SearchCtrl', ['$scope', '$location', function($scope, $location) {
+		$scope.check = function() {
+			console.log($scope.formCtrl.searchText);
+			$location.search($scope.formCtrl.searchText);
+		};
+	}]);
+
 	app.controller('PostsCtrl', ['$scope', '$filter', '$location', '$route','$routeParams',
 		'postsService', 'activeService', 'sanitizeService',
 		function($scope, $filter, $location, $route, $routeParams, postsService, activeService, sanitizeService) {
@@ -315,8 +322,6 @@
 
 		// Sort temp array by date
 		temp.sort(function(a,b) { return parseFloat(b.date) - parseFloat(a.date); } );
-
-		console.log(temp);
 
 	  	var len = temp.length;
 	  	// Number of pages.
