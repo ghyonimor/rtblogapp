@@ -313,7 +313,7 @@
 			}
 		}
 
-		// Filter temp array by date
+		// Sort temp array by date
 		temp.sort(function(a,b) { return parseFloat(b.date) - parseFloat(a.date); } );
 
 		console.log(temp);
