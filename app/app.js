@@ -97,7 +97,7 @@
 
 		activeService.data = 0;
 
-		$scope.currentFilter = $location.search() ? '?' + $location.url().split('?')[1] : '';
+		$scope.currentFilter = $location.url().split('?')[1] ? '?' + $location.url().split('?')[1] : '';
 
 		$scope.$watch(function(){ return $location.url().split('?')[1]; }, function(val, old){
 			if ($location.url && (val !== old) && ($location.url().split('/')[1] === 'posts')) {

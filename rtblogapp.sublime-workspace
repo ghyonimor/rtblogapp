@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"index",
+				"indexOf"
+			],
+			[
+				"has",
+				"hasOwnProperty"
+			],
+			[
 				"sear",
 				"searchParam"
 			],
@@ -404,10 +412,6 @@
 				"margin-bottom"
 			],
 			[
-				"has",
-				"hasClass"
-			],
-			[
 				"hash",
 				"hashVal"
 			],
@@ -483,7 +487,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 4834,
+				"buffer_size": 4873,
 				"line_ending": "Windows"
 			}
 		},
@@ -491,15 +495,7 @@
 			"file": "app/app.js",
 			"settings":
 			{
-				"buffer_size": 8316,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "posts.html",
-			"settings":
-			{
-				"buffer_size": 1382,
+				"buffer_size": 9062,
 				"line_ending": "Windows"
 			}
 		}
@@ -561,9 +557,9 @@
 	],
 	"file_history":
 	[
-		"/C/Users/yoni/Downloads/Free Logo Generator   Free Online Logo Maker, Company, Business.html",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/data/posts.json",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/posts.html",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/data/posts.json",
+		"/C/Users/yoni/Downloads/Free Logo Generator   Free Online Logo Maker, Company, Business.html",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/index.html",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/post.html",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/package.json",
@@ -692,6 +688,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"search",
+			"filter=",
+			"queryString",
 			"split",
 			"currentfilter",
 			"filter",
@@ -816,10 +815,7 @@
 			"console.log",
 			"form-control",
 			"hideform",
-			"closeForm",
-			".click",
-			"console.log",
-			"selecthandler"
+			"closeForm"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -846,15 +842,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4834,
+						"buffer_size": 4873,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3006,
-								3006
+								3021,
+								3021
 							]
 						],
 						"settings":
@@ -863,7 +859,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1585.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -875,15 +871,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8316,
+						"buffer_size": 9062,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1087,
-								1087
+								8232,
+								8232
 							]
 						],
 						"settings":
@@ -896,35 +892,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "posts.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1382,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1233,
-								1233
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 459.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]
