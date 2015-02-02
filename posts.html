@@ -10,7 +10,7 @@
 
 			<p>
 				<small class="glyphicon glyphicon-user"></small>
-				by <a href="#/posts?filter={{ sanitize(post.author) }}">{{ post.author }}</a>
+				by <a href="#/posts?Author={{ sanitize(post.author) }}">{{ post.author }}</a>
 			</p>
 			<p>
 				<small class="glyphicon glyphicon-time"></small>
@@ -32,7 +32,7 @@
 		<footer class="clearfix">
 			<p class="pull-left">
 				<b>Tags:&nbsp;</b>
-				<a href="#/posts?filter={{ tag }}" class="label label-default post-tag" ng-repeat="tag in post.tags">{{ tag }}</a>
+				<a href="#/posts?Category={{ tag }}" class="label label-default post-tag" ng-repeat="tag in post.tags">{{ tag }}</a>
 			</p>
 
 			<a class="btn btn-primary pull-right" href="#/post/{{ sanitize(post.titles) }}">

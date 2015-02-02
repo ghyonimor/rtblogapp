@@ -39,8 +39,8 @@
 
 	app.controller('SearchCtrl', ['$scope', '$location', function($scope, $location) {
 		$scope.check = function() {
-			console.log($scope.formCtrl.searchText);
-			$location.search($scope.formCtrl.searchText);
+			$location.path('posts');
+			$location.search('Search=' + $scope.formCtrl.searchText);
 		};
 	}]);
 
@@ -97,11 +97,12 @@
 
 		activeService.data = 0;
 
-		$scope.currentFilter = $location.search().filter ? '?filter=' + $location.search().filter : '';
+		$scope.currentFilter = $location.search() ? '?' + $location.url().split('?')[1] : '';
 
-		$scope.$watch(function(){ return $location.search().filter; }, function(val, old){
-			if ($location.search().filter && (val !== old)) {
+		$scope.$watch(function(){ return $location.url().split('?')[1]; }, function(val, old){
+			if ($location.url && (val !== old) && ($location.url().split('/')[1] === 'posts')) {
 				$location.path('posts/1');
+				console.log($location.url().split('/')[1]);
 			}
 		}, true);
 
@@ -205,7 +206,7 @@
 			$scope.sanitize = sanitizeService.getUrl;
 
 			$scope.addFilter = function(url) {
-				return '?filter=' + url;
+				return url;
 			};
 
 			$scope.$on('$routeChangeSuccess', function() {
@@ -277,12 +278,22 @@
 	  return function(input) {
 	  	var output =[];
 	  	var temp = [];
-	  	var filter = $location.search().filter;
 	  	var tags;
 	  	var author;
 	  	var date;
 	  	var pageData;
-	  	if (filter) {
+	  	var key;
+	  	var value;
+
+	  	var location = $location.search();
+	  	for (var prop in location) {
+	  		if (location.hasOwnProperty(prop)) {
+	  			 key = prop;
+	  			value = location[prop];
+	  		}
+	  	}
+
+	  	if (value) {
 		  	for (var i = 0; i < input.length; i++) {
 		  		pageData = input[i];
 		  		for (var obj in pageData) {
@@ -291,19 +302,35 @@
 				    	tags = post.tags;
 				    	author = post.author;
 				    	date = post.date;
-				    	for (var j = 0; j < tags.length; j++) {
-				    		if (tags[j] === filter) {
-				    			temp.push(post);
-				    		}
-				    	}
-				    	if (filter === sanitizeService.getUrl(author)) {
+				    	if (key === 'Category') {
+					    	for (var j = 0; j < tags.length; j++) {
+					    		if (tags[j] === value) {
+					    			temp.push(post);
+					    		}
+					    	}
+					    } else
+				    	if (key === 'Author' && value === sanitizeService.getUrl(author)) {
 				    		temp.push(post);
-				    	}
-				    	var month = $filter('date')(date, 'MMMM');
-				    	var year = $filter('date')(date, 'yyyy');
-				    	if (filter === month + year) {
-				    		temp.push(post);
-				    	}
+				    	} else
+				    	if (key === 'Date'){
+					    	var month = $filter('date')(date, 'MMMM');
+					    	var year = $filter('date')(date, 'yyyy');
+					    	if (value === month + year) {
+					    		temp.push(post);
+					    	}
+					    } else
+					    if (key === 'Search'){
+					    	if (post.titles.indexOf(value) > -1 || post.author.indexOf(value) > -1 ||
+					    		post.description.indexOf(value) > -1) {
+					    		temp.push(post);
+					    	} else {
+					    		for (var p = 0; p < tags.length; p++) {
+						    		if (tags[p].indexOf(value) > -1) {
+						    			temp.push(post);
+						    		}
+					    		}
+					    	}
+					    }
 				 	}
 		  		}
 		  	}
