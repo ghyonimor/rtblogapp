@@ -46,7 +46,12 @@ module.exports = function (grunt) {
 				sourceMap: true
 			},
 			target: {
-				src: '<%= dirs.src.js %>/**/*.js',
+				src: ['<%= dirs.src.js %>/**/app.js', '<%= dirs.src.js %>/**/navctrl.js',
+				'<%= dirs.src.js %>/**/searchctrl.js', '<%= dirs.src.js %>/**/postsctrl.js',
+				'<%= dirs.src.js %>/**/postctrl.js', '<%= dirs.src.js %>/**/adminctrl.js',
+				'<%= dirs.src.js %>/**/postsservice.js', '<%= dirs.src.js %>/**/navservice.js',
+				'<%= dirs.src.js %>/**/activeservice.js', '<%= dirs.src.js %>/**/sanitizeservice.js',
+				'<%= dirs.src.js %>/**/filtersctrl.js', '<%= dirs.src.js %>/**/filterposts.js'],
 				dest: '<%= dirs.dest.js %>/main.min.js'
 			}
 		},

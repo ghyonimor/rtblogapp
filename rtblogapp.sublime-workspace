@@ -495,7 +495,7 @@
 			"file": "app/app.js",
 			"settings":
 			{
-				"buffer_size": 9062,
+				"buffer_size": 9073,
 				"line_ending": "Windows"
 			}
 		}
@@ -557,8 +557,8 @@
 	],
 	"file_history":
 	[
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/posts.html",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/data/posts.json",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/posts.html",
 		"/C/Users/yoni/Downloads/Free Logo Generator   Free Online Logo Maker, Company, Business.html",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/index.html",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/post.html",
@@ -859,7 +859,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1585.0,
+						"translation.y": 175.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -871,15 +871,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9062,
+						"buffer_size": 9073,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8232,
-								8232
+								8520,
+								8520
 							]
 						],
 						"settings":
@@ -888,7 +888,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 238.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
