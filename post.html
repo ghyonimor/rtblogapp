@@ -8,7 +8,7 @@
 
 			<p>
 				<small class="glyphicon glyphicon-user"></small>
-				by <a href="#">{{ single.author }}</a>
+				by <a href="#/posts?Author={{ sanitize(single.author) }}">{{ single.author }}</a>
 			</p>
 			<p>
 				<small class="glyphicon glyphicon-time"></small>
@@ -16,7 +16,7 @@
 			</p>
 			<p>
 				<b>Tags:&nbsp;</b>
-				<a href="#" class="label label-default post-tag" ng-repeat="tag in single.tags">{{ tag }}</a>
+				<a href="#/posts?Category={{ tag }}" class="label label-default post-tag" ng-repeat="tag in single.tags">{{ tag }}</a>
 			</p>
 		</header>
 		<hr>

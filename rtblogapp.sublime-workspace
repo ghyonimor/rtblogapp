@@ -4,96 +4,16 @@
 		"selected_items":
 		[
 			[
-				"index",
-				"indexOf"
-			],
-			[
-				"has",
-				"hasOwnProperty"
-			],
-			[
-				"sear",
-				"searchParam"
-			],
-			[
-				"cur",
-				"currentFilter"
-			],
-			[
-				"current",
-				"currentFilter"
-			],
-			[
-				"pages",
-				"pagesNum"
-			],
-			[
-				"page",
-				"pagesNum"
-			],
-			[
 				"get",
-				"getUrl"
+				"getUrls"
 			],
 			[
-				"route",
-				"routeParams"
+				"font",
+				"font-family"
 			],
 			[
-				"curre",
-				"currentPage"
-			],
-			[
-				"rou",
-				"routeChangeSuccess"
-			],
-			[
-				"sa",
-				"sanitizeService"
-			],
-			[
-				"sanit",
-				"sanitizeService"
-			],
-			[
-				"ke",
-				"keyUp"
-			],
-			[
-				"sai",
-				"sanitizeService"
-			],
-			[
-				"san",
-				"sanitizeService"
-			],
-			[
-				"nav",
-				"navService"
-			],
-			[
-				"posts",
-				"postsService"
-			],
-			[
-				"post",
-				"postsService"
-			],
-			[
-				"active",
-				"activeService"
-			],
-			[
-				"act",
-				"activeService"
-			],
-			[
-				"ac",
-				"activeService"
-			],
-			[
-				"activ",
-				"activeTabFlag"
+				"mar",
+				"margin-top"
 			],
 			[
 				"marg",
@@ -138,6 +58,10 @@
 			[
 				"init",
 				"initNotification"
+			],
+			[
+				"active",
+				"activeTab"
 			],
 			[
 				"aria-",
@@ -200,12 +124,20 @@
 				"formsBehavior"
 			],
 			[
+				"ac",
+				"active-panel"
+			],
+			[
 				"tabs",
 				"tabsGroup"
 			],
 			[
 				"q",
 				"quick-reports-panel"
+			],
+			[
+				"act",
+				"active-menu"
 			],
 			[
 				"a",
@@ -328,6 +260,10 @@
 				"getPanel"
 			],
 			[
+				"sear",
+				"searchTerm"
+			],
+			[
 				"searc",
 				"searchElm"
 			],
@@ -388,6 +324,10 @@
 				"dropdownObj"
 			],
 			[
+				"activ",
+				"activate"
+			],
+			[
 				"backgr",
 				"background-attachment"
 			],
@@ -410,6 +350,10 @@
 			[
 				"margi",
 				"margin-bottom"
+			],
+			[
+				"has",
+				"hasClass"
 			],
 			[
 				"hash",
@@ -476,6 +420,10 @@
 				"currentTarget"
 			],
 			[
+				"cur",
+				"cursor"
+			],
+			[
 				"inline",
 				"inline-block"
 			]
@@ -483,22 +431,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 4873,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/app.js",
-			"settings":
-			{
-				"buffer_size": 9073,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -544,45 +476,20 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/yoni/Desktop/Projects/rtblogapp",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/app",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/css",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/data",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/data/posts",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/lib",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/lib/css",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/lib/js",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/public",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/public/css"
 	],
 	"file_history":
 	[
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/data/posts.json",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/posts.html",
-		"/C/Users/yoni/Downloads/Free Logo Generator   Free Online Logo Maker, Company, Business.html",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/index.html",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/post.html",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/package.json",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/lib/js/angular.min.js",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/preview.html",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/data/nav.json",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/admin.html",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/app/app.js",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/data/posts/nav.json",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/data/posts/AngularJS - Controllers.html",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/css/main.scss",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/Gruntfile.js",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/public/css/main.min.css",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/public/css/main.min.css.map",
-		"/C/Users/yoni/Desktop/Projects/BlogApp/data/posts.json",
-		"/C/Users/yoni/Desktop/Projects/BlogApp/data/Navigation/nav.json",
-		"/C/Users/yoni/Desktop/Projects/BlogApp/data/Filters/filters.json",
-		"/C/Users/yoni/Desktop/Projects/BlogApp/data/admin/admin.json",
-		"/C/Users/yoni/Desktop/Projects/BlogApp/css/main.scss",
-		"/C/Users/yoni/Desktop/Projects/BlogApp/data/posts/AngularJS - Controllers.html",
-		"/C/Users/yoni/Desktop/Projects/BlogApp/posts.html",
-		"/C/Users/yoni/Desktop/Projects/BlogApp/post.html",
-		"/C/Users/yoni/Desktop/Projects/BlogApp/content.html",
+		"/C/Users/yoni/Desktop/Projects/webappjquery/src/js/main.js",
+		"/C/Users/yoni/Desktop/Projects/webappjquery/Gruntfile.js",
+		"/C/Users/yoni/Desktop/Projects/webappjquery/index.html",
+		"/C/Users/yoni/Desktop/Projects/webappjquery/data/config.json",
+		"/C/Users/yoni/Desktop/Projects/comverse/css/style.css",
+		"/C/Users/yoni/Desktop/Projects/comverse/css/custom.css",
+		"/C/Users/yoni/Desktop/Projects/NewsWebSite/src/css/_custom.scss",
+		"/C/Users/yoni/Desktop/Projects/NewsWebSite/single.html",
+		"/C/Users/yoni/Desktop/Projects/NewsWebSite/Fonts/basic.ttf",
+		"/C/Users/yoni/Desktop/Projects/NewsWebSite/Fonts/qikki.ttf",
+		"/C/Users/yoni/Desktop/Projects/NewsWebSite/newswebsite.sublime-project",
 		"/C/Users/yoni/Downloads/source/README.html",
 		"/C/Users/yoni/Desktop/Projects/Web-App-jQuery/index.html",
 		"/C/Users/yoni/Desktop/Projects/NewsWebSite/favicon.ico",
@@ -688,38 +595,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"search",
-			"filter=",
-			"queryString",
-			"split",
-			"currentfilter",
-			"filter",
-			"?",
-			"?filter",
-			"params",
-			"form",
-			"years",
-			"sanitize",
-			"sanitizeservice",
-			"sanitize",
-			"sanititz",
-			"routechange",
-			"log",
-			"routeparam",
-			"sort()",
-			"collection",
-			"collectionKeys.sort",
-			"collectionKeys.sory",
-			"console.log",
-			"navService",
-			"myService",
-			"ng-inc",
-			"console.log",
-			"titls",
-			"#",
-			"\"",
-			"#",
-			"\"",
+			"iframe",
+			"handlebars",
+			"Handlebars",
+			"qikki",
+			"20px",
 			"fav",
 			"concat",
 			"navigation",
@@ -815,7 +695,34 @@
 			"console.log",
 			"form-control",
 			"hideform",
-			"closeForm"
+			"closeForm",
+			".click",
+			"console.log",
+			"selecthandler",
+			"the search",
+			"not found",
+			"selectedIndex",
+			"option",
+			"tab3",
+			"select3",
+			"options3",
+			"disp",
+			"ajax",
+			"calc",
+			"20px",
+			"calc",
+			"1079",
+			"calc",
+			"focus",
+			"calc",
+			"change",
+			"tabNumber",
+			"select",
+			"active-tab",
+			"addevent",
+			"hideForm",
+			".active",
+			"hideform"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -833,73 +740,14 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4873,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3021,
-								3021
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 175.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/app.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9073,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8520,
-								8520
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 238.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 22.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -935,7 +783,7 @@
 	"project": "rtblogapp.sublime-project",
 	"replace":
 	{
-		"height": 40.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":

@@ -2,8 +2,8 @@
 
 var app = angular.module('BlogApp');
 
-app.controller('FiltersCtrl', ['$scope', '$filter', '$route', 'postsService', 'sanitizeService',
-	function($scope, $filter, $route, postsService, sanitizeService){
+app.controller('FiltersCtrl', ['$scope', '$location', '$filter', '$route', 'postsService', 'sanitizeService',
+	function($scope, $location, $filter, $route, postsService, sanitizeService){
 
 	var promise = postsService.getPosts;
 
@@ -89,5 +89,28 @@ app.controller('FiltersCtrl', ['$scope', '$filter', '$route', 'postsService', 's
 				$scope.years[year][month] = 1;
 			}
 		}
+
+		$scope.$on('$locationChangeSuccess', function(){
+			var query = $location.url().split('?')[1] ? $location.url().split('?')[1] : undefined;
+			if (query) {
+				var $filters = $('aside a');
+				$.each($filters, function(i, val){
+					console.log(query);
+					console.log(val.href.split('?')[1]);
+					var $val = $(val);
+					var filter = val.href.split('?')[1] ? val.href.split('?')[1] : undefined;
+					if (filter) {
+						if (filter === query){
+							$val.addClass('active');
+						}
+						else {
+							if ($val.hasClass('active')){
+								$val.removeClass('active');
+							}
+						}
+					}
+				});
+			}
+		});
 	});
 }]);
