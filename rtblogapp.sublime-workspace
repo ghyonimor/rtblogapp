@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"acti",
+				"activateFilter"
+			],
+			[
+				"lo",
+				"location"
+			],
+			[
 				"get",
 				"getUrls"
 			],
@@ -150,10 +158,6 @@
 			[
 				"clos",
 				"closeDropdown"
-			],
-			[
-				"acti",
-				"active-menu"
 			],
 			[
 				"query",
@@ -431,6 +435,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app/filtersctrl.js",
+			"settings":
+			{
+				"buffer_size": 2685,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -476,9 +488,18 @@
 	},
 	"expanded_folders":
 	[
+		"/C/Users/yoni/Desktop/Projects/rtblogapp",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/app",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/data"
 	],
 	"file_history":
 	[
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/app/activeservice.js",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/app/postsctrl.js",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/post.html",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/posts.html",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/app/postctrl.js",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/data/posts.json",
 		"/C/Users/yoni/Desktop/Projects/webappjquery/src/js/main.js",
 		"/C/Users/yoni/Desktop/Projects/webappjquery/Gruntfile.js",
 		"/C/Users/yoni/Desktop/Projects/webappjquery/index.html",
@@ -740,8 +761,38 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/filtersctrl.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2685,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2610,
+								2610
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1140.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
