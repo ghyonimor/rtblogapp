@@ -90,29 +90,13 @@ app.controller('FiltersCtrl', ['$scope', '$location', '$filter', '$route', 'post
 			}
 		}
 
-		$scope.activateFilter = function(){
+		$scope.isActive = function(key){
 			var query = $location.url().split('?')[1] ? $location.url().split('?')[1] : undefined;
-			if (query) {
-				var $filters = $('aside a');
-				$.each($filters, function(i, val){
-					var $val = $(val);
-					var filter = val.href.split('?')[1] ? val.href.split('?')[1] : undefined;
-					if (filter) {
-						if (filter === query){
-							$val.addClass('active');
-						}
-						else {
-							if ($val.hasClass('active')){
-								$val.removeClass('active');
-							}
-						}
-					}
-				});
+			console.log(query);
+			console.log(key);
+			if (query === key) {
+				return 'active';
 			}
 		};
-
-		$scope.activateFilter();
-
-		$scope.$on('$locationChangeSuccess', $scope.activateFilter);
 	});
 }]);

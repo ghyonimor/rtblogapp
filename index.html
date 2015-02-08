@@ -55,7 +55,7 @@
 
 			<div class="row">
 
-			<ng-view autoscroll="true"></ng-view>
+			<ng-view></ng-view>
 
 				<!-- Blog Sidebar Widgets Column -->
 				<aside class="col-md-4">
@@ -79,7 +79,7 @@
 						<h3>Filter Posts</h3>
 
 						<div class="list-group">
-							<a href="#/" class="list-group-item active">
+							<a href="#/" class="list-group-item" ng-class="isActive(key)">
 								<span class="badge">{{ numPosts }}</span>
 								Show All Posts
 							</a>
@@ -88,7 +88,7 @@
 						<h4><small class="glyphicon glyphicon-tag"></small> Category</h4>
 						<div class="list-group">
 							<a href="#/posts{{param + '?Category=' + addFilter(sanitize(key)) }}" class="list-group-item"
-							ng-repeat="key in keyUp(categories)">
+							ng-repeat="key in keyUp(categories)" ng-class="isActive('Category=' + addFilter(sanitize(key)))">
 								<span class="badge">{{ categories[key] }}</span>
 								{{ key }}
 							</a>
@@ -96,7 +96,7 @@
 
 						<h4><small class="glyphicon glyphicon-user"></small> Author</h4>
 						<div class="list-group">
-							<a href="#/posts{{param + '?Author=' + addFilter(sanitize(key)) }}" class="list-group-item" ng-repeat="key in keyUp(authors)">
+							<a href="#/posts{{param + '?Author=' + addFilter(sanitize(key)) }}" class="list-group-item" ng-repeat="key in keyUp(authors)" ng-class="isActive('Author=' + addFilter(sanitize(key)))">
 								<span class="badge">{{ authors[key] }}</span>
 								{{ key }}
 							</a>
@@ -107,7 +107,7 @@
 							<span href="#/posts/" class="list-group-item disabled">
 								{{ key }}
 							</span>
-							<a href="#/posts{{param + '?Date=' + addFilter(sanitize(key2) + key) }}" class="list-group-item" ng-repeat="key2 in keyUp(years[key])">
+							<a href="#/posts{{param + '?Date=' + addFilter(sanitize(key2) + key) }}" class="list-group-item" ng-repeat="key2 in keyUp(years[key])" ng-class="isActive('Date=' + addFilter(sanitize(key2) + key))">
 								<span class="badge">{{ years[key][key2] }}</span>
 								{{ key2 }}
 							</a>
