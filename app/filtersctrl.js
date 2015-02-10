@@ -92,8 +92,6 @@ app.controller('FiltersCtrl', ['$scope', '$location', '$filter', '$route', 'post
 
 		$scope.isActive = function(key){
 			var query = $location.url().split('?')[1] ? $location.url().split('?')[1] : undefined;
-			console.log(query);
-			console.log(key);
 			if (query === key) {
 				return 'active';
 			}

@@ -51,12 +51,13 @@ app.filter('filterPosts', ['$location', '$filter','sanitizeService',
 				    	}
 				    } else
 				    if (key === 'search'){
-				    	if (post.titles.indexOf(value) > -1 || post.author.indexOf(value) > -1 ||
+				    	if (sanitize(post.titles).indexOf(value) > -1 ||
+				    		sanitize(post.author).indexOf(value) > -1 ||
 				    		sanitize(post.description).indexOf(value) > -1) {
 				    		temp.push(post);
 				    	} else {
 				    		for (var p = 0; p < tags.length; p++) {
-					    		if (tags[p].indexOf(value) > -1) {
+					    		if (sanitize(tags[p]).indexOf(value) > -1) {
 					    			temp.push(post);
 					    		}
 				    		}
