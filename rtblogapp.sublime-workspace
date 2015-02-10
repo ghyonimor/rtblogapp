@@ -435,14 +435,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/filtersctrl.js",
-			"settings":
-			{
-				"buffer_size": 2685,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -494,6 +486,10 @@
 	],
 	"file_history":
 	[
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/index.html",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/data/nav.json",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/app/filtersctrl.js",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/app/filterposts.js",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/app/activeservice.js",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/app/postsctrl.js",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/post.html",
@@ -616,6 +612,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"isActive()",
+			"isActive",
+			"console.log",
 			"iframe",
 			"handlebars",
 			"Handlebars",
@@ -740,10 +739,7 @@
 			"tabNumber",
 			"select",
 			"active-tab",
-			"addevent",
-			"hideForm",
-			".active",
-			"hideform"
+			"addevent"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -761,38 +757,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/filtersctrl.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2685,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2610,
-								2610
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1140.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
