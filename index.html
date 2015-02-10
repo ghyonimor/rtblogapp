@@ -87,8 +87,8 @@
 
 						<h4><small class="glyphicon glyphicon-tag"></small> Category</h4>
 						<div class="list-group">
-							<a href="#/posts{{param + '?Category=' + addFilter(sanitize(key)) }}" class="list-group-item"
-							ng-repeat="key in keyUp(categories)" ng-class="isActive('Category=' + addFilter(sanitize(key)))">
+							<a href="#/posts{{param + '?category=' + addFilter(sanitize(key)) }}" class="list-group-item"
+							ng-repeat="key in keyUp(categories)" ng-class="isActive('category=' + addFilter(sanitize(key)))">
 								<span class="badge">{{ categories[key] }}</span>
 								{{ key }}
 							</a>
@@ -96,7 +96,7 @@
 
 						<h4><small class="glyphicon glyphicon-user"></small> Author</h4>
 						<div class="list-group">
-							<a href="#/posts{{param + '?Author=' + addFilter(sanitize(key)) }}" class="list-group-item" ng-repeat="key in keyUp(authors)" ng-class="isActive('Author=' + addFilter(sanitize(key)))">
+							<a href="#/posts{{param + '?author=' + addFilter(sanitize(key)) }}" class="list-group-item" ng-repeat="key in keyUp(authors)" ng-class="isActive('author=' + addFilter(sanitize(key)))">
 								<span class="badge">{{ authors[key] }}</span>
 								{{ key }}
 							</a>
@@ -107,7 +107,7 @@
 							<span href="#/posts/" class="list-group-item disabled">
 								{{ key }}
 							</span>
-							<a href="#/posts{{param + '?Date=' + addFilter(sanitize(key2) + key) }}" class="list-group-item" ng-repeat="key2 in keyUp(years[key])" ng-class="isActive('Date=' + addFilter(sanitize(key2) + key))">
+							<a href="#/posts{{param + '?date=' + addFilter(sanitize(key2) + key) }}" class="list-group-item" ng-repeat="key2 in keyUp(years[key])" ng-class="isActive('date=' + addFilter(sanitize(key2) + key))">
 								<span class="badge">{{ years[key][key2] }}</span>
 								{{ key2 }}
 							</a>

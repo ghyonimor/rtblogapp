@@ -14,6 +14,7 @@ app.filter('filterPosts', ['$location', '$filter','sanitizeService',
   	var pageData;
   	var key;
   	var value;
+  	var sanitize = sanitizeService.getUrl;
 
   	var location = $location.search();
   	for (var prop in location) {
@@ -32,26 +33,26 @@ app.filter('filterPosts', ['$location', '$filter','sanitizeService',
 			    	tags = post.tags;
 			    	author = post.author;
 			    	date = post.date;
-			    	if (key === 'Category') {
+			    	if (key === 'category') {
 				    	for (var j = 0; j < tags.length; j++) {
-				    		if (tags[j] === value) {
+				    		if (sanitize(tags[j]) === value) {
 				    			temp.push(post);
 				    		}
 				    	}
 				    } else
-			    	if (key === 'Author' && value === sanitizeService.getUrl(author)) {
+			    	if (key === 'author' && value === sanitizeService.getUrl(author)) {
 			    		temp.push(post);
 			    	} else
-			    	if (key === 'Date'){
+			    	if (key === 'date'){
 				    	var month = $filter('date')(date, 'MMMM');
 				    	var year = $filter('date')(date, 'yyyy');
-				    	if (value === month + year) {
+				    	if (value === sanitize(month + year)) {
 				    		temp.push(post);
 				    	}
 				    } else
-				    if (key === 'Search'){
+				    if (key === 'search'){
 				    	if (post.titles.indexOf(value) > -1 || post.author.indexOf(value) > -1 ||
-				    		post.description.indexOf(value) > -1) {
+				    		sanitize(post.description).indexOf(value) > -1) {
 				    		temp.push(post);
 				    	} else {
 				    		for (var p = 0; p < tags.length; p++) {
