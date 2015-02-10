@@ -1,3 +1,6 @@
+/**
+ * Get the filters from the json file, count the number of posts each filter shows and display it.
+ */
 'use strict';
 
 var app = angular.module('BlogApp');
@@ -34,10 +37,6 @@ app.controller('FiltersCtrl', ['$scope', '$location', '$filter', '$route', 'post
 
 		$scope.sanitize = sanitizeService.getUrl;
 
-		$scope.addFilter = function(url) {
-			return url;
-		};
-
 		$scope.$on('$routeChangeSuccess', function() {
 			var param = $route.current.params.param;
 
@@ -51,6 +50,9 @@ app.controller('FiltersCtrl', ['$scope', '$location', '$filter', '$route', 'post
 			}
 		});
 
+		/**
+		 * Counts and displays filters.
+		 */
 		for (var i = 0; i < $scope.data.posts.length; i++) {
 			var post = $scope.data.posts[i],
 				author = post.author,
@@ -90,6 +92,9 @@ app.controller('FiltersCtrl', ['$scope', '$location', '$filter', '$route', 'post
 			}
 		}
 
+		/**
+		 * return 'active' class if the filter is active.
+		 */
 		$scope.isActive = function(key){
 			var query = $location.url().split('?')[1] ? $location.url().split('?')[1] : undefined;
 			if (query === key) {

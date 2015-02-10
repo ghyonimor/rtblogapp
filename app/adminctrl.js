@@ -1,3 +1,6 @@
+/**
+ * A controller to be used in the admin panel.
+ */
 'use strict';
 
 var app = angular.module('BlogApp');

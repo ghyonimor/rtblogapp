@@ -1,3 +1,6 @@
+/**
+ * Single post controller, connects a single post to the all posts page.
+ */
 'use strict';
 
 var app = angular.module('BlogApp');

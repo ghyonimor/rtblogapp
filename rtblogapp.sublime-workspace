@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"sa",
+				"sanitizeService"
+			],
+			[
+				"sani",
+				"sanitize"
+			],
+			[
+				"saniti",
+				"sanitizeService"
+			],
+			[
+				"san",
+				"sanitize"
+			],
+			[
 				"acti",
 				"activateFilter"
 			],
@@ -486,15 +502,22 @@
 	],
 	"file_history":
 	[
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/index.html",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/data/nav.json",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/app/searchctrl.js",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/app/postsservice.js",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/app/sanitizeservice.js",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/app/postsctrl.js",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/app/postctrl.js",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/app/navservice.js",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/app/navctrl.js",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/app/filtersctrl.js",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/app/filterposts.js",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/app/app.js",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/app/adminctrl.js",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/app/activeservice.js",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/app/postsctrl.js",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/index.html",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/post.html",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/posts.html",
-		"/C/Users/yoni/Desktop/Projects/rtblogapp/app/postctrl.js",
+		"/C/Users/yoni/Desktop/Projects/rtblogapp/data/nav.json",
 		"/C/Users/yoni/Desktop/Projects/rtblogapp/data/posts.json",
 		"/C/Users/yoni/Desktop/Projects/webappjquery/src/js/main.js",
 		"/C/Users/yoni/Desktop/Projects/webappjquery/Gruntfile.js",
@@ -612,6 +635,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"addfilter",
+			"Author",
+			"console",
 			"isActive()",
 			"isActive",
 			"console.log",
@@ -736,10 +762,7 @@
 			"focus",
 			"calc",
 			"change",
-			"tabNumber",
-			"select",
-			"active-tab",
-			"addevent"
+			"tabNumber"
 		],
 		"highlight": true,
 		"in_selection": false,

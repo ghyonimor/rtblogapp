@@ -1,3 +1,6 @@
+/**
+ * Get posts data from json.
+ */
 'use strict';
 
 var app = angular.module('BlogApp');

@@ -1,3 +1,6 @@
+/**
+ * Sanitize URL (lowercase and replace illegal inputs).
+ */
 'use strict';
 
 var app = angular.module('BlogApp');

@@ -1,3 +1,6 @@
+/**
+ * The main js file, defines routes.
+ */
 (function () {
 	'use strict';
 

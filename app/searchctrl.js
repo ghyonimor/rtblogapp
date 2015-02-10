@@ -1,3 +1,6 @@
+/**
+ * Search element controller, activates search in the URL.
+ */
 'use strict';
 
 var app = angular.module('BlogApp');

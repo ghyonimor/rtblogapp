@@ -1,3 +1,6 @@
+/**
+ * Gets navigation element from navService, adds an 'active' class when clicked.
+ */
 'use strict';
 
 var app = angular.module('BlogApp');

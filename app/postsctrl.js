@@ -1,3 +1,6 @@
+/**
+ * All posts controller.
+ */
 'use strict';
 
 var app = angular.module('BlogApp');
@@ -10,20 +13,25 @@ app.controller('PostsCtrl', ['$scope', '$filter', '$location', '$route','$routeP
 
 	$scope.pages = [];
 
+
+	/**
+	 * Get posts data.
+	 */
 	promise.then(function(result) {
 		$scope.data = result.data;
 		var len = $scope.data.posts.length;
 
-		if (len < 3) {
-			console.log('do nothing');
-		}
-
+		/**
+		 * If more than 3 posts, create pages array.
+		 */
 		if (len > 3) {
 			var pagesNum = Math.ceil(len / 3);
 			for (var i = 1; i < pagesNum + 1; i++) {
 				$scope.pages[i] = [];
 				for (var j = i* 3 - 3; j < i * 3; j++) {
-					// The pages array contains array of the posts that will show on page pages[i].
+					/**
+					 * The pages array contains array of the posts that will show on page pages[i].
+					 */
 					if ($scope.data.posts[j]) {
 						$scope.pages[i].push($scope.data.posts[j]);
 					}
@@ -31,17 +39,20 @@ app.controller('PostsCtrl', ['$scope', '$filter', '$location', '$route','$routeP
 			}
 		}
 
+		/**
+		 * Filter posts.
+		 */
 		$scope.pages = $filter('filterPosts')($scope.pages);
 
 		if ($routeParams.param) {
 			$scope.currentPage = Number($routeParams.param);
 		} else {
 			$scope.currentPage = 1;
-			if (len > 3) {
-				console.log('change route param');
-			}
 		}
 
+		/**
+		 * Display / hide pagination.
+		 */
 		if (!$scope.pages[$scope.currentPage - 1]) {
 			$('.next').css('display', 'none');
 		}
@@ -55,12 +66,17 @@ app.controller('PostsCtrl', ['$scope', '$filter', '$location', '$route','$routeP
 
 	activeService.data = 0;
 
+	/**
+	 * Get current filter query string.
+	 */
 	$scope.currentFilter = $location.url().split('?')[1] ? '?' + $location.url().split('?')[1] : '';
 
+	/**
+	 * Watch filter change event, redirect to posts/1.
+	 */
 	$scope.$watch(function(){ return $location.url().split('?')[1]; }, function(val, old){
 		if ($location.url && (val !== old) && ($location.url().split('/')[1] === 'posts')) {
 			$location.path('posts/1');
-			console.log($location.url().split('/')[1]);
 		}
 	}, true);
 

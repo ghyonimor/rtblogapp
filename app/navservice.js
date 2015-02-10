@@ -1,3 +1,6 @@
+/**
+ * Gets navigation elements from json.
+ */
 'use strict';
 
 var app = angular.module('BlogApp');
