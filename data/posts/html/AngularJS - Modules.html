@@ -1,25 +1,10 @@
-<section>
-
-
-
-<section>
-
-
-
 <h2 id="hid-modules">Modules</h2>
-<h3 id="hid-what-is-a-module">What is a module?</h3>
+<h3 id="hid-what-is-a-module-">What is a module?</h3>
 <blockquote>
 <p>You can think of a module as a container for the different parts of your app – Controllers, Services, Filters, Directives, etc.</p>
 </blockquote>
-</section>
-
-
-
-<section>
-
-
-
-<h3 id="hid-why-do-we-need-it">Why do we need it?</h3>
+<hr>
+<h3 id="hid-why-do-we-need-it-">Why do we need it?</h3>
 <p>Most applications have a main method that instantiates and wires together the different parts of the application.</p>
 <p>Angular apps don’t have a main method. Instead, modules declaratively specify how an application should be bootstrapped. There are several advantages to this approach:</p>
 <ul>
@@ -29,14 +14,7 @@
 <li>Unit tests only have to load relevant modules, which keeps them fast.</li>
 <li>End-to-end tests can use modules to override configuration.</li>
 </ul>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-recommended-setup">Recommended Setup</h3>
 <p>Break your application to multiple modules:</p>
 <ul>
@@ -44,14 +22,7 @@
 <li>A module for each reusable component (especially Directives and Filters)</li>
 <li>An application level module which depends on the above modules and contains any initialization code.</li>
 </ul>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-module-setup">Module setup</h3>
 <p>HTML:</p>
 <pre><code class="handlebars">&lt;div ng-app=&quot;myApp&quot;&gt;
@@ -72,14 +43,7 @@ app.filter(&#39;greet&#39;, function () {
     };
 });
 </code></pre>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-dependency-injection-in-modules">Dependency injection in modules</h3>
 <pre><code class="js">var app = angular.module(&#39;myApp&#39;, [&#39;Module2&#39;, &#39;Module3&#39;]);
 </code></pre>
@@ -87,8 +51,3 @@ app.filter(&#39;greet&#39;, function () {
 <ul>
 <li><a href="https://docs.angularjs.org/guide/module">More info on modules</a></li>
 </ul>
-</section>
-
-
-
-</section>

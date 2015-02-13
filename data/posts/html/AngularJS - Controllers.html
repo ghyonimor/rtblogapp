@@ -1,21 +1,6 @@
-<section>
-
-
-
-<section>
-
-
-
 <h2 id="hid-controllers-extra-topics">Controllers - Extra topics</h2>
-</section>
-
-
-
-<section>
-
-
-
-<h3 id="hid-scope-and-functions-on-scope">$scope and functions on $scope</h3>
+<hr>
+<h3 id="hid--scope-and-functions-on-scope">$scope and functions on $scope</h3>
 <p>The <code>$scope</code> basically serves as the data model.</p>
 <p>More info from the Angular website:</p>
 <ul>
@@ -28,14 +13,7 @@
 <li><p>Scopes provide context against which expressions are evaluated. For example, a <code>{{userName}}</code> expression is meaningless, unless it is evaluated against a specific scope which defines the <code>userName</code> property.</p>
 </li>
 </ul>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-prototypal-inheritance">Prototypal inheritance</h3>
 <p>There is always one root scope, but chlid scopes can exist, and they inherit (prototypically) from their parent scope(s):</p>
 <pre><code class="handlebars">&lt;div ng-app=&quot;scopeExample&quot;&gt;
@@ -54,17 +32,10 @@
     &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <pre><code class="js">angular.module(&#39;scopeExample&#39;, [])
 
-.controller(&#39;GreetController&#39;, [&#39;$scope&#39;, &#39;$rootScope&#39;,
+.controller(&#39;GreetController&#39;, [&#39;$scope&#39;, &#39;$rootScope&#39;, 
     function ($scope, $rootScope) {
         $scope.name = &#39;World&#39;;
         $rootScope.department = &#39;Angular&#39;;
@@ -77,28 +48,14 @@
     }
 ]);
 </code></pre>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <pre><code class="css">.show-scope-demo.ng-scope,
 .show-scope-demo .ng-scope  {
     border: 1px solid red;
     margin: 3px;
 }
 </code></pre>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-passing-by-reference-value">Passing by reference/value</h3>
 <p>Remember that there is difference between this:</p>
 <pre><code class="js">var str = &#39;string&#39;;
@@ -119,14 +76,7 @@ function updateString(strParam) {
 updateString(strObject);
 console.log(strObject.str);
 </code></pre>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <p>So too, this:</p>
 <pre><code class="handlebars">&lt;div ng-app=&quot;scopeExample&quot;&gt;
     &lt;div ng-controller=&quot;ParentController&quot;&gt;
@@ -149,14 +99,7 @@ console.log(strObject.str);
         function ($scope) { /* ... */ }
     ]);
 </code></pre>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <p>is different than this:</p>
 <pre><code class="handlebars">&lt;div ng-app=&quot;scopeExample&quot;&gt;
     &lt;div ng-controller=&quot;ParentController&quot;&gt;
@@ -181,24 +124,10 @@ console.log(strObject.str);
         function ($scope) { /* ... */ }
     ]);
 </code></pre>
-</section>
-
-
-
-<section>
-
-
-
-<h3 id="hid-controller-as-syntax">“<code>Controller as</code>“ syntax</h3>
+<hr>
+<h3 id="hid--controller-as-syntax">“<code>Controller as</code>“ syntax</h3>
 <p><a href="https://docs.angularjs.org/api/ng/directive/ngController">AngularJS.org - ngController</a><br><a href="http://plnkr.co/edit/EndHxw6QcY3dKAZZhEXD?p=preview">Controller As - Example</a></p>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-built-in-scope-methods">Built-In <code>$scope</code> methods</h3>
 <p><strong><code>$watch</code></strong></p>
 <blockquote>
@@ -220,8 +149,3 @@ console.log(strObject.str);
 <ul>
 <li>Affects performance if used a lot or if doing heavy lifting. Don’t abuse it! </li>
 </ul>
-</section>
-
-
-
-</section>

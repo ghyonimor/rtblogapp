@@ -17,14 +17,7 @@ OK
 
 Done, without errors.
 </code></pre>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-alias-tasks">Alias Tasks</h3>
 <blockquote>
 <p>Setup a task name that runs other tasks, with optional arguments</p>
@@ -37,14 +30,7 @@ Done, without errors.
     grunt.registerTask(&#39;hi&#39;, [&#39;test:hello&#39;, &#39;test:world&#39;]);
 };
 </code></pre>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-failing-tasks">Failing tasks</h3>
 <pre><code class="js">grunt.registerTask(&#39;test&#39;, &#39;Say hi!&#39;, function (str) {
     if (!str) {
@@ -60,4 +46,3 @@ grunt.registerTask(&#39;hi&#39;, [&#39;test&#39;, &#39;test:World&#39;]);
 <ul>
 <li>Subsequent tasks will be aborted</li>
 </ul>
-</section>

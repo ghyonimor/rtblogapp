@@ -1,32 +1,9 @@
-<section>
-
-
-
-<section>
-
-
-
 <h2 id="hid-services">Services</h2>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <blockquote>
 <p>Services are probably the easiest piece to understand in Angular. They’re cross-application, and easy to inject and use.  A service is a nice name for an Angular singleton.</p>
 </blockquote>
-</section>
-
-
-
-<section>
-
-
-
-
+<hr>
 <h3 id="hid-creating-a-service">Creating a Service</h3>
 <p>We use the same pattern we’ve seen a lot:</p>
 <pre><code class="js">myApp.factory(&#39;myService&#39;, [&#39;$location&#39;, function ($location) {
@@ -45,15 +22,8 @@
 }
 }]);
 </code></pre>
-</section>
-
-
-
-<section>
-
-
-
-<h3 id="hid-service-vs-factory"><code>service</code> vs. <code>factory</code></h3>
+<hr>
+<h3 id="hid--service-vs-factory-"><code>service</code> vs. <code>factory</code></h3>
 <p>Sometimes, you’ll see this:</p>
 <pre><code class="js">myApp.service(&#39;myService&#39;, [function () {}])
 </code></pre>
@@ -69,22 +39,10 @@
 <li>Any time you WOULD use <code>new</code>, use <code>service</code></li>
 <li>And if you WOULDN’T use <code>new</code>, use <code>factory</code></li>
 </ul>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-use-cases-for-services">Use-cases for services</h3>
 <ul>
 <li>Utility functions</li>
 <li>Server communication encapsulation</li>
 <li>Managing your model across your app</li>
 </ul>
-</section>
-
-
-
-</section>

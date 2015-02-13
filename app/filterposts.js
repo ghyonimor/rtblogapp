@@ -72,7 +72,7 @@ app.filter('filterPosts', ['$location', '$filter','sanitizeService',
 				     * If it's a search query.
 				     */
 				    if (key === 'search'){
-				    	if (sanitize(post.titles).indexOf(value) > -1 ||
+				    	if (sanitize(post.title).indexOf(value) > -1 ||
 				    		sanitize(post.author).indexOf(value) > -1 ||
 				    		sanitize(post.description).indexOf(value) > -1) {
 				    		temp.push(post);

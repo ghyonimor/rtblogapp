@@ -1,20 +1,11 @@
-<section>
-
-
-
-<h2 id="hid-what-is-grunt">What is Grunt?</h2>
+<h1 id="hid-grunt">Grunt</h1>
+<hr>
+<h2 id="hid-what-is-grunt-">What is Grunt?</h2>
 <blockquote>
 <p><a href="http://gruntjs.com/">Grunt</a> - The JavaScript Task Runner</p>
 </blockquote>
-</section>
-
-
-
-<section>
-
-
-
-<h2 id="hid-why-do-we-need-it">Why do we need it?</h2>
+<hr>
+<h2 id="hid-why-do-we-need-it-">Why do we need it?</h2>
 <blockquote>
 <p>Automate repetitive tasks</p>
 </blockquote>
@@ -25,14 +16,7 @@
 <li>Linting</li>
 <li>etc.</li>
 </ul>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h2 id="hid-prerequisites">Prerequisites</h2>
 <ul>
 <li>Node.js</li>
@@ -45,15 +29,8 @@
 <li>Local <code>grunt</code> package</li>
 <li>Global <code>grunt-cli</code> package</li>
 </ul>
-</section>
-
-
-
-<section>
-
-
-
-<h3 id="hid-package-json-example"><code>package.json</code> Example</h3>
+<hr>
+<h3 id="hid--package-json-example"><code>package.json</code> Example</h3>
 <pre><code class="js">{
     &quot;name&quot;: &quot;my-project-name&quot;,
     &quot;version&quot;: &quot;0.1.0&quot;,
@@ -68,14 +45,7 @@
 <ul>
 <li><code>npm install</code> vs. <code>npm install grunt --save-dev</code></li>
 </ul>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h2 id="hid-grunt-cli">Grunt CLI</h2>
 <ul>
 <li>Install a global <code>grunt-cli</code> package</li>
@@ -85,49 +55,21 @@
 <ul>
 <li>This is not the task runner, it just allows running a version of Grunt next to a <code>Gruntfile.js</code></li>
 </ul>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-grunt-help">Grunt help</h3>
 <pre><code class="js">grunt -h
 </code></pre>
-</section>
-
-
-
-<section>
-
-
-
-<h2 id="hid-gruntfile-js"><code>Gruntfile.js</code></h2>
+<hr>
+<h2 id="hid--gruntfile-js-"><code>Gruntfile.js</code></h2>
 <blockquote>
 <p>A JS file that defines which plugins to load and tasks to run</p>
 </blockquote>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-example">Example</h3>
 <ul>
 <li><a href="http://codepen.io/netcraft/pen/GgobgK?editors=001">Gruntfile.js</a></li>
 </ul>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-the-wrapper-function">The “wrapper” function</h3>
 <ul>
 <li>Basic Node module</li>
@@ -136,14 +78,7 @@
     // Do grunt-related things in here
 };
 </code></pre>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-project-and-task-configuration">Project and task configuration</h3>
 <pre><code class="js">// Project configuration.
 grunt.initConfig({
@@ -164,14 +99,7 @@ grunt.initConfig({
 <li>Everything else is just ignored by the plugins</li>
 <li>We can use template strings (<code>&lt;%= %&gt;</code>) inside string values</li>
 </ul>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-loading-grunt-plugins-and-tasks">Loading Grunt plugins and tasks</h3>
 <ul>
 <li>Most commonly used tasks are already available as Grunt plugins</li>
@@ -183,14 +111,7 @@ grunt.loadNpmTasks(&#39;grunt-contrib-uglify&#39;);
 <ul>
 <li>We can check which tasks are available using <code>grunt -h</code></li>
 </ul>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-setting-default-tasks">Setting default tasks</h3>
 <ul>
 <li>We can define one or more tasks to run by default when executing <code>grunt</code> in the CLI</li>
@@ -205,27 +126,13 @@ grunt.registerTask(&#39;default&#39;, [&#39;uglify&#39;]);
 grunt default
 grunt
 </code></pre>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h2 id="hid-uglifyjs">UglifyJS</h2>
 <blockquote>
 <p>JavaScript compressor/minifier (and more)</p>
 </blockquote>
 <p><a href="http://lisperator.net/uglifyjs/">UglifyJS</a></p>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-setup-an-uglify-task">Setup an <code>uglify</code> task</h3>
 <h4 id="hid-grunt-plugin">Grunt plugin</h4>
 <p><a href="https://github.com/gruntjs/grunt-contrib-uglify">grunt-contrib-uglify</a></p>
@@ -233,14 +140,7 @@ grunt
 </code></pre>
 <h4 id="hid-example">Example</h4>
 <p><a href="http://codepen.io/netcraft/pen/jEWjbB?editors=001">Grunt Uglify Setup</a></p>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-result">Result</h3>
 <pre><code class="js">&gt; grunt
 Running &quot;uglify:target&quot; (uglify) task
@@ -252,14 +152,7 @@ Done, without errors.
 <h4 id="hid-detailed-info">Detailed Info</h4>
 <pre><code class="js">grunt --verbose
 </code></pre>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-notes">Notes</h3>
 <ul>
 <li><code>options</code> is per the Uglify docs, <code>target</code> can be whatever</li>
@@ -269,14 +162,7 @@ Done, without errors.
 <pre><code class="js">grunt uglify:target
 grunt uglify:target:utils
 </code></pre>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-exercise-20m">Exercise - 20m</h3>
 <ul>
 <li>Create a simple <code>package.json</code> (use <code>npm init</code>)</li>
@@ -290,27 +176,13 @@ grunt uglify:target:utils
 </li>
 <li>Run <code>grunt</code></li>
 </ul>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h2 id="hid-jshint">JSHint</h2>
 <blockquote>
 <p>Detects errors and potential problems in JavaScript code</p>
 </blockquote>
 <p><a href="http://jshint.com/">JSHint</a></p>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-setup-a-jshint-task">Setup a <code>jshint</code> task</h3>
 <h4 id="hid-grunt-plugin">Grunt plugin</h4>
 <p><a href="https://github.com/gruntjs/grunt-contrib-jshint">grunt-contrib-jshint</a></p>
@@ -318,38 +190,17 @@ grunt uglify:target:utils
 </code></pre>
 <h4 id="hid-example">Example</h4>
 <p><a href="http://codepen.io/netcraft/pen/zxrVMe?editors=001">Grunt JSHint Setup</a></p>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-exercise-10m">Exercise - 10m</h3>
 <ul>
 <li>Add a <code>jshint</code> task to run before the <code>uglify</code> task</li>
 </ul>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h2 id="hid-concat">Concat</h2>
 <blockquote>
 <p>Concatenate multiple files into a single file</p>
 </blockquote>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-setup-a-concat-task">Setup a <code>concat</code> task</h3>
 <h4 id="hid-grunt-plugin">Grunt plugin</h4>
 <p><a href="https://github.com/gruntjs/grunt-contrib-concat">grunt-contrib-concat</a></p>
@@ -357,14 +208,7 @@ grunt uglify:target:utils
 </code></pre>
 <h4 id="hid-example">Example</h4>
 <p><a href="http://codepen.io/netcraft/pen/yyedwq?editors=001">Grunt Concat Setup</a></p>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-exercise-15m">Exercise - 15m</h3>
 <ul>
 <li>Save the <code>src</code> and <code>dest</code> folders settings in an object above the individual plugin’s settings<ul>
@@ -378,38 +222,17 @@ grunt uglify:target:utils
 </li>
 <li>Update the <code>uglify</code> task to run on the end result file <code>all.js</code></li>
 </ul>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-solution">Solution</h3>
 <ul>
 <li><a href="http://codepen.io/netcraft/pen/Qwyeyx?editors=001">Ex. Grunt JSHint/Concat/Uglify Solution</a></li>
 </ul>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h2 id="hid-watch">Watch</h2>
 <blockquote>
 <p>Do something when specific file(s) change</p>
 </blockquote>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-setup-a-watch-task">Setup a <code>watch</code> task</h3>
 <h4 id="hid-grunt-plugin">Grunt plugin</h4>
 <p><a href="https://github.com/gruntjs/grunt-contrib-watch">grunt-contrib-watch</a></p>
@@ -417,17 +240,17 @@ grunt uglify:target:utils
 </code></pre>
 <h4 id="hid-example">Example</h4>
 <p><a href="http://codepen.io/netcraft/pen/QwyeKB?editors=001">Grunt Watch Setup</a></p>
-</section>
-
-
-
-<section>
-
-
-
+<hr>
 <h3 id="hid-exercise-10m">Exercise - 10m</h3>
 <ul>
 <li>Add a <code>watch</code> task that will watch all <code>js</code> files under <code>src/js</code> and trigger the <code>default</code> task on changes</li>
 <li>Run <code>grunt watch</code> to initialize</li>
 </ul>
-</section>
+<p>&lt;!-- Reference --&gt;
+</p>
+<p>&lt;!-- Tools --&gt;
+</p>
+<p>&lt;!-- Examples --&gt;
+</p>
+<p>&lt;!-- In-Class Exercises --&gt;
+</p>

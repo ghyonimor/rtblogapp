@@ -17,7 +17,7 @@ app.controller('PostCtrl', ['$scope', '$routeParams', 'postsService', 'sanitizeS
 	promise.then(function(result) {
 		$scope.data = result.data;
 		for (var i = 0; i < $scope.data.posts.length; i++) {
-			if  ($scope.url === $scope.sanitize($scope.data.posts[i].titles)) {
+			if  ($scope.url === $scope.sanitize($scope.data.posts[i].title)) {
 				$scope.single = $scope.data.posts[i];
 			}
 		}
