@@ -6,7 +6,8 @@
 var app = angular.module('BlogApp');
 
 app.controller('FiltersCtrl', ['$scope', '$location', '$filter', '$route', 'postsService', 'sanitizeService',
-	function($scope, $location, $filter, $route, postsService, sanitizeService){
+	'activeService',
+	function($scope, $location, $filter, $route, postsService, sanitizeService, activeService){
 
 	var promise = postsService.getPosts;
 
@@ -16,6 +17,13 @@ app.controller('FiltersCtrl', ['$scope', '$location', '$filter', '$route', 'post
 		 * "category": "num of posts"
 		 */
 		$scope.categories = {};
+
+		if (activeService.data === 1 || $scope.route === null){
+			$scope.route = 'admin';
+		} else if (activeService.data === 0){
+			$scope.route = 'posts';
+		}
+		console.log($scope.route);
 
 		/**
 		 * "author": "num of posts"
