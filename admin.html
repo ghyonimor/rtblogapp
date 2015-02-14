@@ -32,53 +32,11 @@
 		</thead>
 
 		<tbody>
-			<tr>
-				<th scope="row">1</th>
-				<td>AngularJS - Controllers</td>
-				<td>Ilan Cohen</td>
-				<td>14 Jan, 2015</td>
-			</tr>
-			<tr>
-				<th scope="row">2</th>
-				<td>AngularJS - Modules</td>
-				<td>Ilan Cohen</td>
-				<td>14 Jan, 2015</td>
-			</tr>
-			<tr>
-				<th scope="row">3</th>
-				<td>AngularJS - Routes</td>
-				<td>Ilan Cohen</td>
-				<td>14 Jan, 2015</td>
-			</tr>
-			<tr>
-				<th scope="row">4</th>
-				<td>AngularJS - Services</td>
-				<td>Ilan Cohen</td>
-				<td>14 Jan, 2015</td>
-			</tr>
-			<tr>
-				<th scope="row">5</th>
-				<td>Grunt - Custom Tasks</td>
-				<td>Alex Ilyaev</td>
-				<td>10 Dec, 2014</td>
-			</tr>
-			<tr>
-				<th scope="row">6</th>
-				<td>Grunt - Intro</td>
-				<td>Alex Ilyaev</td>
-				<td>10 Dec, 2014</td>
-			</tr>
-			<tr>
-				<th scope="row">7</th>
-				<td>jQuery - Events, AJAX</td>
-				<td>Amit Choukroun</td>
-				<td>3 Dec, 2014</td>
-			</tr>
-			<tr>
-				<th scope="row">8</th>
-				<td>jQuery - Selectors, DOM</td>
-				<td>Amit Choukroun</td>
-				<td>1 Dec, 2014</td>
+			<tr ng-repeat="post in data.posts">
+				<th scope="row">{{ $index + 1}}</th>
+				<td>{{ post.title }}</td>
+				<td>{{ post.author }}</td>
+				<td>{{ post.date | date:'mediumDate' }}</td>
 			</tr>
 		</tbody>
 	</table>
