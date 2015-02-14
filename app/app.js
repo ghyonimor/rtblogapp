@@ -15,9 +15,17 @@
 	    .when('/post/:param?', {
 	        templateUrl: 'post.html',
 	        controller: 'PostCtrl'})
-	    .when('/admin/:param?', {
+	    .when('/admin', {
 	    	templateUrl: 'admin.html',
 	    	controller: 'AdminCtrl'
+	    })
+	    .when('/admin/new/post', {
+	    	templateUrl: 'edit.html',
+	    	controller: 'NewCtrl'
+	    })
+	    .when('/admin/edit/post/:param', {
+	    	templateUrl: 'edit.html',
+	    	controller: 'EditCtrl'
 	    });
 	}]);
 }());

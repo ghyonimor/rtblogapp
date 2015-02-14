@@ -44,6 +44,19 @@ app.controller('PostsCtrl', ['$scope', '$filter', '$location', '$route','$routeP
 		 */
 		$scope.pages = $filter('filterPosts')($scope.pages);
 
+		$scope.x = (function() {
+			var count = 0;
+			for (var p = 0; p < $scope.pages.length; p++) {
+				var pageNum = $scope.pages[p];
+				if (pageNum) {
+					console.log(pageNum.length);
+					count = count + pageNum.length;
+				}
+			}
+			console.log(count);
+			return count;
+		}());
+
 		if ($routeParams.param) {
 			$scope.currentPage = Number($routeParams.param);
 		} else {

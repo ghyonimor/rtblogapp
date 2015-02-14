@@ -55,65 +55,7 @@
 
 			<div class="row">
 
-			<ng-view></ng-view>
-
-				<!-- Blog Sidebar Widgets Column -->
-				<aside class="col-md-4">
-
-					<!-- Blog Search Well -->
-					<div class="well" ng-controller="SearchCtrl">
-						<h4>Search</h4>
-						<form class="input-group" ng-submit="check()">
-							<input type="text" class="form-control" ng-model="formCtrl.searchText">
-							<span class="input-group-btn">
-								<button class="btn btn-default" type="submit">
-									<span class="glyphicon glyphicon-search"></span>
-							</button>
-							</span>
-						</form>
-						<!-- /.input-group -->
-					</div>
-
-					<!-- Blog Categories Well -->
-					<div class="well" ng-controller="FiltersCtrl">
-						<h3>Filter Posts</h3>
-
-						<div class="list-group">
-							<a href="#/" class="list-group-item" ng-class="isActive(key)">
-								<span class="badge">{{ numPosts }}</span>
-								Show All Posts
-							</a>
-						</div>
-
-						<h4><small class="glyphicon glyphicon-tag"></small> Category</h4>
-						<div class="list-group">
-							<a href="#/posts{{param + '?category=' + sanitize(key) }}" class="list-group-item"
-							ng-repeat="key in keyUp(categories)" ng-class="isActive('category=' + sanitize(key))">
-								<span class="badge">{{ categories[key] }}</span>
-								{{ key }}
-							</a>
-						</div>
-
-						<h4><small class="glyphicon glyphicon-user"></small> Author</h4>
-						<div class="list-group">
-							<a href="#/posts{{param + '?author=' + (sanitize(key)) }}" class="list-group-item" ng-repeat="key in keyUp(authors)" ng-class="isActive('author=' + sanitize(key))">
-								<span class="badge">{{ authors[key] }}</span>
-								{{ key }}
-							</a>
-						</div>
-
-						<h4><small class="glyphicon glyphicon-time"></small> Month</h4>
-						<div class="list-group" ng-repeat="key in keyUp(years)">
-							<span href="#/posts/" class="list-group-item disabled">
-								{{ key }}
-							</span>
-							<a href="#/posts{{param + '?date=' + (sanitize(key2) + key) }}" class="list-group-item" ng-repeat="key2 in keyUp(years[key])" ng-class="isActive('date=' + sanitize(key2) + key)">
-								<span class="badge">{{ years[key][key2] }}</span>
-								{{ key2 }}
-							</a>
-						</div>
-					</div>
-				</aside>
+				<ng-view></ng-view>
 
 			</div>
 			<!-- /.row -->
@@ -137,6 +79,7 @@
 		<!-- Libraries -->
 		<script src="lib/js/jquery.min.js"></script>
 		<script src="lib/js/bootstrap.min.js"></script>
+		<script src="lib/js/marked.min.js"></script>
 		<script data-require="angular.js@*" data-semver="1.3.7" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.7/angular.js"></script>
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular-route.min.js"></script>
     	<script src="bower_components/angular-toArrayFilter/toArrayFilter.js"></script>

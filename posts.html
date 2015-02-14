@@ -1,6 +1,6 @@
 <!-- Blog Entries Column -->
 <section class="col-md-8">
-	<h1 class="page-header">All Posts</h1>
+	<h1 class="page-header">Show {{ x }} posts</h1>
 	<!-- Begin Post -->
 	<article ng-repeat="post in pages[currentPage]">
 		<header>
@@ -17,13 +17,6 @@
 				Posted on {{ post.date | date }}
 			</p>
 		</header>
-		<hr>
-
-		<figure>
-			<img class="img-responsive" src="{{ post.image }}"
-				alt="">
-		</figure>
-		<hr>
 
 		<!-- Post Description -->
 		<p>{{ post.description }}</p>
@@ -39,8 +32,8 @@
 				Read More <i class="glyphicon glyphicon-chevron-right"></i>
 			</a>
 		</footer>
+		<hr>
 	</article>
-	<hr>
 	<!-- End of Post -->
 
 	<!-- Pager -->
@@ -53,3 +46,5 @@
 		</li>
 	</ul>
 </section>
+
+<ng-include src="'sidebar.html'"></ng-include>
