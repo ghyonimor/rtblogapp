@@ -20,11 +20,11 @@
 	    	controller: 'AdminCtrl'
 	    })
 	    .when('/admin/new/post', {
-	    	templateUrl: 'edit.html',
+	    	templateUrl: 'new.html',
 	    	controller: 'NewCtrl'
 	    })
 	    .when('/admin/edit/post/:param', {
-	    	templateUrl: 'edit.html',
+	    	templateUrl: 'new.html',
 	    	controller: 'EditCtrl'
 	    });
 	}]);
