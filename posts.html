@@ -38,10 +38,10 @@
 
 	<!-- Pager -->
 	<ul class="pager">
-		<li class="previous">
+		<li class="previous" ng-show="hasOlder()">
 			<a href="#posts/{{ currentPage + 1 + currentFilter}}">&larr; Older</a>
 		</li>
-		<li class="next">
+		<li class="next" ng-show="hasNewer()">
 			<a href="#posts/{{ currentPage - 1 + currentFilter}}">Newer &rarr;</a>
 		</li>
 	</ul>

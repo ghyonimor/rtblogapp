@@ -23,6 +23,21 @@ app.controller('PostsCtrl', ['$scope', '$filter', '$location', '$route','$routeP
 			$scope.currentPage = 1;
 		}
 
+		$scope.hasOlder = function(){
+			if ($filter('filterPosts')($scope.data.posts, $scope.currentPage + 1)[0]) {
+				return true;
+			} else {
+				return false;
+			}
+		};
+
+		$scope.hasNewer = function(){
+			if ($filter('filterPosts')($scope.data.posts, $scope.currentPage - 1)[0]) {
+				return true;
+			} else {
+				return false;
+			}
+		};
 	});
 
 	$scope.sanitize = sanitizeService.getUrl;
