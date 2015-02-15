@@ -11,51 +11,11 @@ app.controller('PostsCtrl', ['$scope', '$filter', '$location', '$route','$routeP
 
 	var promise = postsService.getPosts;
 
-	$scope.pages = [];
-
-
 	/**
 	 * Get posts data.
 	 */
 	promise.then(function(result) {
 		$scope.data = result.data;
-		var len = $scope.data.posts.length;
-
-		/**
-		 * If more than 3 posts, create pages array.
-		 */
-		if (len > 3) {
-			var pagesNum = Math.ceil(len / 3);
-			for (var i = 1; i < pagesNum + 1; i++) {
-				$scope.pages[i] = [];
-				for (var j = i* 3 - 3; j < i * 3; j++) {
-					/**
-					 * The pages array contains array of the posts that will show on page pages[i].
-					 */
-					if ($scope.data.posts[j]) {
-						$scope.pages[i].push($scope.data.posts[j]);
-					}
-				}
-			}
-		}
-
-		/**
-		 * Filter posts.
-		 */
-		$scope.pages = $filter('filterPosts')($scope.pages);
-
-		$scope.x = (function() {
-			var count = 0;
-			for (var p = 0; p < $scope.pages.length; p++) {
-				var pageNum = $scope.pages[p];
-				if (pageNum) {
-					console.log(pageNum.length);
-					count = count + pageNum.length;
-				}
-			}
-			console.log(count);
-			return count;
-		}());
 
 		if ($routeParams.param) {
 			$scope.currentPage = Number($routeParams.param);
@@ -63,16 +23,6 @@ app.controller('PostsCtrl', ['$scope', '$filter', '$location', '$route','$routeP
 			$scope.currentPage = 1;
 		}
 
-		/**
-		 * Display / hide pagination.
-		 */
-		if (!$scope.pages[$scope.currentPage - 1]) {
-			$('.next').css('display', 'none');
-		}
-
-		if ((!$scope.pages[$scope.currentPage + 1])) {
-			$('.previous').css('display', 'none');
-		}
 	});
 
 	$scope.sanitize = sanitizeService.getUrl;

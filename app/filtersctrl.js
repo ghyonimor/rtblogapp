@@ -23,7 +23,6 @@ app.controller('FiltersCtrl', ['$scope', '$location', '$filter', '$route', 'post
 		} else if (activeService.data === 0){
 			$scope.route = 'posts';
 		}
-		console.log($scope.route);
 
 		/**
 		 * "author": "num of posts"

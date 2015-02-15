@@ -17,7 +17,6 @@ app.controller('AdminCtrl', ['$scope', 'activeService', 'postsService',
 	 */
 	promise.then(function(result) {
 		$scope.data = result.data;
-		console.log($scope.data);
 	});
 
 	$scope.$on('$destroy', function(){
