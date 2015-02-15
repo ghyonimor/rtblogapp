@@ -5,7 +5,7 @@
 
 var app = angular.module('BlogApp');
 
-app.filter('filterPosts',['$location', '$filter','sanitizeService',
+app.filter('filterPosts',['$location', '$filter', 'sanitizeService',
 	function($location, $filter, sanitizeService) {
 
   return function(input, currentPage) {

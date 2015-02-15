@@ -11,12 +11,17 @@ app.controller('SearchCtrl', ['$scope', '$location', 'sanitizeService', 'activeS
 	$scope.sanitize = sanitizeService.getUrl;
 
 	$scope.check = function() {
-		if (activeService.data === 0 || activeService.data === null){
-			$location.path('posts');
-		} else if (activeService.data === 1) {
-			$location.path('admin');
+		if ($scope.query) {
+			if (activeService.data === 0 || activeService.data === null){
+				$location.path('posts');
+			} else if (activeService.data === 1) {
+				$location.path('admin');
+			}
+			$location.search('search=' + $scope.sanitize($scope.query));
 		}
-		$location.search('search=' + $scope.sanitize($scope.query));
+		else {
+			$location.search('');
+		}
 	};
 	$scope.query = $location.search().search;
 }]);
