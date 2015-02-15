@@ -21,7 +21,7 @@ app.filter('filterPosts',['$location', '$filter','sanitizeService',
   		key = query.split('=')[0];
   		value = query.split('=')[1];
 
-	  	for (var i = 0; i < input.length; i++) {
+	  	for (var i = 0; input && i < input.length; i++) {
 	  		var post = input[i];
 	  		var tags = post.tags;
 	  		var author = sanitize(post.author);
@@ -46,24 +46,26 @@ app.filter('filterPosts',['$location', '$filter','sanitizeService',
 	  				output.push(post);
 	  			}
 	  		} else if (key === 'search') {
-	  			if (author.indexOf(value) > -1 ||
-	  				dateString.indexOf(value) > -1 ||
-	  				post.description.indexOf(value) > -1) {
+		    	if (sanitize(post.title).indexOf(value) > -1 ||
+		    		author.indexOf(value) > -1 ||
+		    		sanitize(post.description).indexOf(value) > -1) {
 
-	  				output.push(post);
-	  			} else {
-	  				for (var k = 0; k < tags.length; k++) {
-		  				var tagSearch = sanitize(tags[k]);
-		  				if (tagSearch.indexOf(value) > -1) {
-		  					output.push(post);
-		  				}
-		  			}
-	  			}
+		    		output.push(post);
+		    	} else {
+		    		for (var p = 0; p < tags.length; p++) {
+			    		if (sanitize(tags[p]).indexOf(value) > -1) {
+
+			    			output.push(post);
+			    		}
+		    		}
+		    	}
 	  		}
 	  	}
 	}
 
-	output = output.slice(currentPage * 3 - 3, currentPage * 3);
+	if (currentPage !== 'admin') {
+		output = output.slice(currentPage * 3 - 3, currentPage * 3);
+	}
 
     return output;
   };

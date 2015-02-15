@@ -32,7 +32,7 @@
 		</thead>
 
 		<tbody>
-			<tr ng-repeat="post in data.posts | filterPosts">
+			<tr ng-repeat="post in data.posts | filterPosts: 'admin'">
 				<th scope="row">{{ $index + 1}}</th>
 				<td>{{ post.title }}</td>
 				<td>{{ post.author }}</td>

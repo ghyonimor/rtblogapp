@@ -16,6 +16,7 @@ app.controller('SearchCtrl', ['$scope', '$location', 'sanitizeService', 'activeS
 		} else if (activeService.data === 1) {
 			$location.path('admin');
 		}
-		$location.search('search=' + $scope.sanitize($scope.formCtrl.searchText));
+		$location.search('search=' + $scope.sanitize($scope.query));
 	};
+	$scope.query = $location.search().search;
 }]);
