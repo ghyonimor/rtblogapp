@@ -38,6 +38,8 @@ app.controller('PostsCtrl', ['$scope', '$filter', '$location', '$route','$routeP
 				return false;
 			}
 		};
+
+		$scope.x = $filter('filterPosts')($scope.data.posts, 'count').length;
 	});
 
 	$scope.sanitize = sanitizeService.getUrl;

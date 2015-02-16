@@ -63,7 +63,7 @@ app.filter('filterPosts',['$location', '$filter', 'sanitizeService',
 	  	}
 	}
 
-	if (currentPage !== 'admin') {
+	if (currentPage !== 'admin' && currentPage !== 'count') {
 		output = output.slice(currentPage * 3 - 3, currentPage * 3);
 	}
 
