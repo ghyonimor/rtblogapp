@@ -27,11 +27,13 @@ app.controller('AdminCtrl', ['$scope', '$location', 'sanitizeService', 'activeSe
 
     $scope.check = function(post) {
     	var url = $scope.sanitize(post.title);
-    	console.log($location.url());
-    	console.log(url);
     	$location.url('admin/edit/post/' + url);
     };
 
     $scope.predicate = 'title';
     $scope.reverse = false;
+
+    $scope.$watch('predicate', function() {
+        $scope.reverse = false;
+   	});
 }]);
