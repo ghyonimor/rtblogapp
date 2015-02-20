@@ -3,7 +3,7 @@
 
 	<h2 class="page-header">Add New Post</h2>
 
-	<form>
+	<form ng-submit="save(title, author, tags, description, markdown)">
 		<!-- Top Settings -->
 		<div class="row">
 			<div class="col-sm-6">
@@ -11,19 +11,19 @@
 					<label for="postTitle">Title</label>
 					<input type="text" class="form-control" id="postTitle" name="postTitle"
 						placeholder="Post Title" required autofocus
-						value="">
+						value="" ng-model="title">
 				</div>
 				<div class="form-group required">
 					<label for="postAuthor">Author</label>
 					<input type="text" class="form-control" id="postAuthor" name="postAuthor"
 						placeholder="Post Author" required
-						value="">
+						value="" ng-model="author">
 				</div>
 				<div class="form-group">
 					<label for="postTags">Tags</label>
 					<input type="text" class="form-control" id="postTags" name="postTags"
 						placeholder="Post Tags"
-						value="">
+						value="" ng-model="tags">
 
 					<p class="help-block">Separate multiple tags with a comma.
 						e.g.<code>Grunt,Tools</code></p>
@@ -35,7 +35,7 @@
 					<label for="postDescription">Description</label>
 					<textarea class="form-control" id="postDescription" name="postDescription"
 						rows="10" placeholder="Post Description"
-						required></textarea>
+						required ng-model="description"></textarea>
 				</div>
 			</div>
 		</div>
@@ -46,7 +46,7 @@
 			<div class="form-group required col-sm-6">
 				<label for="postMd">Markdown</label>
 
-				<textarea class="form-control previewPane" id="postMd" name="postMd"
+				<textarea ng-model="markdown" class="form-control previewPane" id="postMd" name="postMd"
 					rows="20" placeholder="Post Markdown" required></textarea>
 			</div>
 
@@ -60,6 +60,6 @@
 		<hr>
 
 		<button type="submit" class="btn btn-primary">Save Post</button>
-		<button class="btn btn-danger pull-right">Delete Post</button>
+		<button ng-click="del()" class="btn btn-danger pull-right" ng-show="isEditMode()">Delete Post</button>
 	</form>
 </section>

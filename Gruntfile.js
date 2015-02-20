@@ -51,7 +51,9 @@ module.exports = function (grunt) {
 				'<%= dirs.src.js %>/**/postctrl.js', '<%= dirs.src.js %>/**/adminctrl.js',
 				'<%= dirs.src.js %>/**/postsservice.js', '<%= dirs.src.js %>/**/navservice.js',
 				'<%= dirs.src.js %>/**/activeservice.js', '<%= dirs.src.js %>/**/sanitizeservice.js',
-				'<%= dirs.src.js %>/**/filtersctrl.js', '<%= dirs.src.js %>/**/filterposts.js'],
+				'<%= dirs.src.js %>/**/filtersctrl.js', '<%= dirs.src.js %>/**/filterposts.js',
+				'<%= dirs.src.js %>/**/newctrl.js', '<%= dirs.src.js %>/**/editctrl.js',
+				'<%= dirs.src.js %>/**/saveservice.js'],
 				dest: '<%= dirs.dest.js %>/main.min.js'
 			}
 		},
