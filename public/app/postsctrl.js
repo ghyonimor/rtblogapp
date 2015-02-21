@@ -11,12 +11,6 @@ app.controller('PostsCtrl', ['$scope', '$filter', '$location', '$route','$routeP
 
 	var promise = postsService.getPosts;
 
-	var postsCache = [];
-	if (JSON.parse(localStorage.getItem('postsCache'))) {
-		postsCache = JSON.parse(localStorage.getItem('postsCache'));
-	}
-	console.log(postsCache);
-
 	/**
 	 * Get posts data.
 	 */

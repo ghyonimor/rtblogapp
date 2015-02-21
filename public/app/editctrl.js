@@ -15,7 +15,5 @@ app.controller('EditCtrl', ['$scope', 'activeService', 'saveService',
 
 	$scope.save = saveService.save;
 
-	$scope.del = function(){
-		console.log('delete');
-	};
+	$scope.del = saveService.del;
 }]);

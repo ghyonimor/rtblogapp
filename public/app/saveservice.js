@@ -5,9 +5,8 @@
 
 var app = angular.module('BlogApp');
 
-app.factory('saveService', function() {
+app.factory('saveService', ['$http', function($http) {
 	return {
-		// Save post data to local storage 'postsCache'.
 		save: function(title, author, tags, description, markdown) {
 			var tagArray = tags.replace(' ', '').split(',');
 
@@ -19,15 +18,12 @@ app.factory('saveService', function() {
 				'mdPath': markdown
 			};
 
-			var posts = [];
-
-			if (JSON.parse(localStorage.getItem('postsCache'))) {
-				posts = JSON.parse(localStorage.getItem('postsCache'));
-			}
-
-			posts.push(post);
-
-			localStorage.setItem('postsCache', JSON.stringify(posts));
+			$http.post('/posts', {
+				post: post
+			});
+		},
+		del: function() {
+			console.log('delete');
 		}
 	};
-});
+}]);

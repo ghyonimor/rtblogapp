@@ -1,11 +1,6 @@
 module.exports = function (grunt) {
 	'use strict';
 
-	var port = grunt.option('port') || 9001,
-		lrPort = grunt.option('lr-port') || 35731,
-		hostname = 'localhost',
-		baseFolder = '.';
-
 	// Display the elapsed execution time of grunt tasks
 	require('time-grunt')(grunt);
 	// Load all grunt-* packages from package.json
@@ -18,14 +13,36 @@ module.exports = function (grunt) {
 		// Paths settings
 		dirs: {
 			src: {
-				js: 'app',
-				css: 'css'
+				js: 'public/app',
+				css: 'public/css'
 			},
 			dest: {
-				dest: 'public',
-				css: 'public/css',
-				js: 'public/js'
+				dest: 'public/public',
+				css: 'public/public/css',
+				js: 'public/public/js'
 			}
+		},
+
+		express: {
+		    options: {
+		      // Override defaults here
+		    },
+		    dev: {
+		      options: {
+		        script: 'server.js'
+		      }
+		    },
+		    prod: {
+		      options: {
+		        script: 'server.js',
+		        node_env: 'production'
+		      }
+		    },
+		    test: {
+		      options: {
+		        script: 'server.js'
+		      }
+		    }
 		},
 		// Check that all JS files conform to our `.jshintrc` files
 		jshint: {
@@ -53,7 +70,7 @@ module.exports = function (grunt) {
 				'<%= dirs.src.js %>/**/activeservice.js', '<%= dirs.src.js %>/**/sanitizeservice.js',
 				'<%= dirs.src.js %>/**/filtersctrl.js', '<%= dirs.src.js %>/**/filterposts.js',
 				'<%= dirs.src.js %>/**/newctrl.js', '<%= dirs.src.js %>/**/editctrl.js',
-				'<%= dirs.src.js %>/**/saveservice.js'],
+				'<%= dirs.src.js %>/**/saveservice.js', '<%= dirs.src.js %>/**/markdown.js'],
 				dest: '<%= dirs.dest.js %>/main.min.js'
 			}
 		},
@@ -75,13 +92,10 @@ module.exports = function (grunt) {
 			css: '<%= dirs.dest.css %>',
 			js: '<%= dirs.dest.js %>'
 		},
+
 		// Trigger relevant tasks when the files they watch has been changed
 		// This includes adding/deleting files/folders as well
 		watch: {
-			// Will try to connect to a LiveReload script
-			options: {
-				livereload: lrPort
-			},
 			configs: {
 				options: {
 					reload: true
@@ -98,29 +112,26 @@ module.exports = function (grunt) {
 			},
 			index: {
 				files: 'index.html'
-			}
-		},
-		// Setup a local server (using Node) with LiveReload enabled
-		connect: {
-			server: {
-				options: {
-					port: port,
-					base: baseFolder,
-					hostname: hostname,
-					livereload: lrPort,
-					open: true
-				}
-			}
+			},
+			express: {
+		      files:  [ '<%= dirs.src.js %>/**/*.js' ],
+		      tasks:  [ 'express:dev' ],
+		      options: {
+		        spawn: false
+		      }
+		    }
 		}
 	});
 
 	// Setup build tasks aliases
+	grunt.loadNpmTasks('grunt-express-server');
+	grunt.loadNpmTasks('grunt-livereload');
 	grunt.registerTask('build-js', ['clean:js', 'jshint', 'uglify']);
 	grunt.registerTask('build-css', ['clean:css', 'sass']);
 	grunt.registerTask('build', ['clean:all', 'build-js', 'build-css']);
 
 	// Open local server and watch for file changes
-	grunt.registerTask('serve', ['connect', 'watch']);
+	grunt.registerTask('serve', ['express', 'watch']);
 
 	// Default task(s).
 	grunt.registerTask('default', ['build']);

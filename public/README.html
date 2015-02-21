@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>blog-app</title>
+	<title>blogapp</title>
 
 	<style>
 		/**
@@ -29,16 +29,14 @@
 <li>Node.js</li>
 </ul>
 <h2 id="behavior-requirements">Behavior Requirements</h2>
-<h3 id="homepage">Homepage</h3>
+<h2 id="stage-1-viewing-posts">Stage 1 - Viewing posts</h2>
+<h3 id="posts-">Posts:</h3>
 <h4 id="menu">Menu</h4>
 <ul>
-<li>“All Posts”<ul>
+<li>“Posts”<ul>
 <li>URL - <code>#/posts</code></li>
-<li>Should be active (use <code>active</code> class on the <code>li</code>)<ul>
-<li>If a filter is applied, should no longer be active</li>
-</ul>
-</li>
-<li>Show all posts (3 at a time), sorted by date, most recent first</li>
+<li>Should be active <em>(use <code>active</code> class on the <code>li</code>)</em></li>
+<li>Show all posts <em>(3 at a time)</em>, sorted by date, most recent first</li>
 <li>Make “Show All Posts” in the Sidebar as the active item</li>
 </ul>
 </li>
@@ -46,71 +44,83 @@
 <li>URL - <code>#/admin</code></li>
 </ul>
 </li>
-<li>Clicking the logo should redirect to “All Posts” (using Routes)<ul>
+<li>Clicking the logo should redirect to “Posts” <em>(using Routes)</em><ul>
 <li>URL - <code>#/</code></li>
 </ul>
 </li>
 </ul>
 <h4 id="posts-feed">Posts feed</h4>
 <ul>
+<li>Reference<ul>
+<li><code>examples/index.html</code> <em>(under <code>&lt;!-- Blog Entries Column --&gt;</code> section)</em></li>
+</ul>
+</li>
 <li>Load all posts dynamically from <code>data/posts.json</code><ul>
-<li>Do not change the file contents</li>
-<li>Use each one of the given keys</li>
+<li>Make sure the file is fetched only once</li>
+<li>Do not change the file contents manually</li>
+<li>Cache the data for later use</li>
+<li>Use each one of the keys of the post object</li>
 <li>Notice the desired date format in the View</li>
-<li><strong>TBD</strong> - Missing posts description (use Lorem Ipsum for now)</li>
-<li><strong>TBD</strong> - Posts images are just placeholders</li>
 </ul>
 </li>
 <li>Show 3 posts at a time<ul>
-<li>Hide “Older” button (at the bottom) if showing the first batch of posts</li>
-<li>Hide “Newer” button (at the bottom) if showing the last batch of posts</li>
-<li>Clicking “Newer” should remove the currently shown posts and load the next 3 posts.<ul>
-<li>URL - <code>#/posts/PAGE_NUMBER</code> (e.g. <code>2</code>)</li>
+<li>Hide “Newer” button <em>(at the bottom)</em> if showing the first batch of posts</li>
+<li>Hide “Older” button <em>(at the bottom)</em> if showing the last batch of posts</li>
+<li>Clicking “Newer” should load the next 3 posts.<ul>
+<li>URL - <code>#/posts/PAGE_NUMBER</code> <em>(e.g. <code>#/posts/2</code>)</em></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>Clicking a post title or the “Read More” button should redirect to the relevant post view<ul>
 <li>URL - <code>#/post/POST_TITLE</code></li>
-<li>POST_TITLE should have only dashes as words delimiters<ul>
+<li><code>POST_TITLE</code> should have only dashes as words delimiters<ul>
 <li>All other non-word charaters should be removed</li>
 <li>e.g. <code>jQuery - Selectors, DOM</code> becomes <code>#/post/jQuery-Selectors-DOM</code></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Clicking the Author name should trigger the author name item in the Sidebar</li>
-<li>Clicking a Tag name should trigger the tag name item in the Sidebar</li>
+<li>Clicking the Author name should behave the same as clicking it in the Sidebar</li>
+<li>Clicking a Tag name should behave the same as clicking it in the Sidebar</li>
 </ul>
 <h4 id="sidebar">Sidebar</h4>
 <ul>
 <li>Search<ul>
 <li>Update URL - <code>#/posts?search=SEARCH_QUERY</code></li>
-<li>Should be able to find posts by typing part of a Title, Author, Tag or Description</li>
-<li>When using the Search, all filters should be removed (URL and Active state in the Sidebar)</li>
+<li>Should be able to find posts by typing part of a Title, Author, Tag or Description <em>(non case sensitive)</em></li>
+<li>When using the Search, all filters should be removed <em>(from the URL and the Active state in the Sidebar)</em></li>
 </ul>
 </li>
 <li>Filter Posts<ul>
-<li>Data should be dynamic, initialized from <code>posts.json</code></li>
-<li>Each selected item should be set as Active (<code>active</code> class on the <code>a</code>)</li>
-<li>Each item should have a badge indicating how many posts are attached to it (value inside the <code>span</code>)</li>
+<li>Items data should be dynamic, initialized from <code>posts.json</code></li>
+<li>Items should be ordered alphabetically <em>(ascending)</em><ul>
+<li>Month filters should be ordered by newest first</li>
+</ul>
+</li>
+<li>The selected item should be set as Active <em>(<code>active</code> class on the <code>a</code>)</em><ul>
+<li>There should be only 1 selected item in the Sidebar</li>
+</ul>
+</li>
+<li>Each item should have a badge indicating how many posts are attached to it <em>(value inside the <code>span</code>)</em></li>
 <li>When clicked, should update the URL, which will trigger the filtering of the posts list to show only the posts that match that filter</li>
+<li>If a filter has more than 1 page, the page number should come before the filter query (e.g. <code>#/posts/2?author=alex-ilyaev</code>)</li>
 <li><strong>Show All Posts</strong><ul>
-<li>Same as “All Posts” in the top menu</li>
+<li>Same as “Posts” in the top menu</li>
 <li>When selected, remove all filters from the URL and remove their <code>active</code> state in the Sidebar</li>
 </ul>
 </li>
 <li><strong>Category</strong><ul>
 <li>Update URL - <code>#/posts?category=CATEGORY_NAME</code><ul>
 <li>This is the tag name of the post</li>
-<li>Should be lowercase, separated by a dash (e.g. <code>angularjs</code>)</li>
+<li>Should be lowercase, separated by a dash <em>(e.g. <code>angularjs</code>)</em></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><strong>Author</strong><ul>
 <li>Update URL - <code>#/posts?author=AUTHOR_NAME</code><ul>
-<li>Should be lowercase, separated by a dash (e.g. <code>alex-ilyaev</code>)</li>
+<li>Should be lowercase, separated by a dash <em>(e.g. <code>alex-ilyaev</code>)</em></li>
 </ul>
 </li>
 </ul>
@@ -118,39 +128,121 @@
 <li><strong>Month</strong><ul>
 <li>Notice the desired month format in the View</li>
 <li>Update URL - <code>#/posts?month=MONTH-YEAR</code><ul>
-<li>Should be lowercase, separated by a dash (e.g. <code>jan-2015</code>)</li>
+<li>Should be lowercase, separated by a dash <em>(e.g. <code>january-2015</code>)</em></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Several filters can be applied at once<ul>
-<li>e.g. <code>#/posts?author=alex-ilyaev&amp;category=grunt</code></li>
-</ul>
-</li>
-<li>If a filter has more than 1 page, the page number should come before the filter query (e.g. <code>#/posts/2?author=alex-ilyaev</code>)</li>
 </ul>
 </li>
 </ul>
-<h3 id="single-post-view">Single Post View</h3>
+<h3 id="single-post-view-">Single Post View:</h3>
 <ul>
-<li>Should show the full post</li>
+<li>Reference<ul>
+<li><code>examples/post.html</code> <em>(under <code>&lt;!-- Blog Post Content Column --&gt;</code> section)</em></li>
+</ul>
+</li>
+<li>Should show the full post content</li>
 <li>Menu and Sidebar stay the same</li>
-<li>The content body should be loaded from the relevant <code>html</code> file (<code>source</code> path in <code>posts.json</code>)</li>
-<li>Notice the differences from the homepage<ul>
-<li>From <code>&lt;!-- Blog Post Content Column --&gt;</code> till <code>&lt;!-- Post Content --&gt;</code><ul>
-<li>Removed the “All Posts” <code>h1</code> tag</li>
-<li>The post Title is now an <code>h1</code> and not clickable (with class <code>page-header</code>)</li>
-<li>The Tags <code>p</code> moved to be below the date, without the <code>pull-left</code> class</li>
+<li>The content body should be loaded from the relevant <code>.html</code> file <em>(<code>htmlPath</code> value in <code>posts.json</code>)</em><ul>
+<li>The fetched HTML should not be interpolated <em>(see <code>ngSanitize</code>)</em></li>
 </ul>
 </li>
-<li>Added the <code>&lt;!-- Blog Comments --&gt;</code> section</li>
-<li>Removed the <code>&lt;!-- Pager --&gt;</code> section</li>
-<li>Everything else (besides the post content) is the same</li>
+<li>Comments (<strong>TBD</strong>)</li>
+</ul>
+<h2 id="stage-2-editing-posts">Stage 2 - Editing posts</h2>
+<h3 id="admin-">Admin:</h3>
+<h4 id="admin-panel">Admin panel</h4>
+<ul>
+<li>Reference<ul>
+<li><code>examples/admin.html</code> <em>(under <code>&lt;!-- Admin - Posts Table --&gt;</code> section)</em></li>
 </ul>
 </li>
-<li><strong>TBD</strong> - Comments</li>
+<li>Posts data should be loaded dynamically from <code>data/posts.json</code><ul>
+<li>Initially should be sorted by Date (descending)</li>
 </ul>
-<h3 id="admin">Admin</h3>
+</li>
+<li>Clicking a column title should re-sort the posts by that column<ul>
+<li>If already sorted by the clicked column, should reverse the sorting<ul>
+<li>The opposite arrow icon should be shown</li>
+</ul>
+</li>
+<li>If clicking a non sorted column, should sort by that column, at the same sorting order that was previously set <em>(i.e. sorting order should be remembered throughout the columns)</em></li>
+<li>The <code>#</code> column should not be sorted</li>
+</ul>
+</li>
+<li>Clicking “Add New Post” should redirect to the “Add New Post” view<ul>
+<li>URL - <code>#/admin/new/post</code></li>
+</ul>
+</li>
+<li>Clicking on a post row should redirect to the “Edit Post” view for that post<ul>
+<li>URL - <code>#/admin/edit/post/POST_TITLE</code></li>
+</ul>
+</li>
+<li>The Sidebar filters should work the same <em>(i.e. filter the posts data in the table)</em></li>
+</ul>
+<h4 id="add-new-post">Add New Post</h4>
+<ul>
+<li>Reference<ul>
+<li><code>examples/new.html</code> <em>(under <code>&lt;!-- Admin - New Post --&gt;</code> section)</em></li>
+</ul>
+</li>
+<li>The “Delete Post” button should be hidden</li>
+<li>All form fields should be empty</li>
+<li>Typing inside “Markdown” should convert the value to HTML <em>(using the Marked library)</em> and present it under “HTML Preview”<ul>
+<li>Should trigger on each change under “Markdown”</li>
+<li>The resulting HTML should not be interpolated <em>(see <code>ngSanitize</code>)</em></li>
+<li>Setup and usage example - <a href="http://codepen.io/anon/pen/MYORbX?editors=001">CodePen - Marked Example</a></li>
+</ul>
+</li>
+<li>Clicking “Save Post” button should:<ul>
+<li>Validate the form<ul>
+<li>All required fields should have a value<ul>
+<li>If one of the fields doesn’t, the proper alert box should be shown <em>(under <code>&lt;!-- Invalid Input Alert --&gt;</code>)</em></li>
+<li>Every invalid field should be set as an error <em>(set a <code>has-error</code> class on the wrapping <code>DIV</code> element)</em></li>
+</ul>
+</li>
+<li>The “Title” must be unique<ul>
+<li>If it’s not, the proper alert box should be shown</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If all is valid<ul>
+<li>The form data should be added as a new post in the cached Posts Data object<ul>
+<li>The post <code>date</code> value should be a string of the current Date time</li>
+<li>The converted HTML should not be saved, only the Markdown source <em>(under an <code>mdSource</code> key)</em></li>
+<li>This won’t be persistent, but will prepare us for Stage 3</li>
+<li>Once saved, the new post data should be seen throughout the app</li>
+</ul>
+</li>
+<li>If the save was successful, redirect to the Admin panel</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="edit-post">Edit post</h4>
+<ul>
+<li>Reference<ul>
+<li><code>examples/edit.html</code> <em>(under <code>&lt;!-- Admin - Edit Post --&gt;</code> section)</em></li>
+</ul>
+</li>
+<li>Should use the same View file as “Add New Post”</li>
+<li>The “Delete Post” button should be shown</li>
+<li>The form fields should be populated with the post data<ul>
+<li>The Markdown data should be loaded from <code>mdSource</code> if available, otherwise from the <code>mdPath</code> file</li>
+<li>The Tags data should be loaded as a string of tags <em>(delimited by a comma <code>,</code>)</em></li>
+</ul>
+</li>
+<li>The data under “Markdown” should be converted to HTML and shown under “HTML Preview”</li>
+<li>Clicking “Save Post” button should behave the same as in “Add New Post”<ul>
+<li>The <code>date</code> key should not be updated</li>
+</ul>
+</li>
+<li>Clicking “Delete Post” should remove the relevant post object from the cached Posts Data object and redirect to the Admin panel</li>
+</ul>
+<h2 id="stage-3-persistent-data-on-the-server">Stage 3 - Persistent data on the server</h2>
 <ul>
 <li><strong>TBD</strong></li>
 </ul>
