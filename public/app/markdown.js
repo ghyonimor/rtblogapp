@@ -5,7 +5,7 @@
 
 var app = angular.module('BlogApp');
 
-app.directive('markdown', function() {
+app.directive('markdown', ['$window', function($window) {
   return {
     restrict: 'E',
     link: function(scope, element) {
@@ -14,12 +14,11 @@ app.directive('markdown', function() {
     	}, function(){
     		var sanitized = '';
     		if (scope.markdown) {
-    			sanitized = scope.markdown;
-
+    			sanitized = $window.marked(scope.markdown);
     		}
 
     		element.html(sanitized);
     	});
     }
   };
-});
+}]);
