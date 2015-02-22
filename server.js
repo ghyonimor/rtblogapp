@@ -7,7 +7,6 @@
 var express = require('express');
 var fs = require('fs');
 var path = require('path');
-var logger = require('morgan');
 var bodyParser = require('body-parser');
 
 // Create the initial posts data file
@@ -23,8 +22,6 @@ app.set('port', 3000);
  * These run on every request
  */
 
-// Add extra logging in the console
-app.use(logger('dev'));
 // Request's body parsing
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -42,25 +39,27 @@ app.get('/', function (req, res) {
 app.post('/posts', function (req, res) {
 	console.log(req.method, req.path, req.body);
 
-	// fs.readFile(postsPath, function (err, data) {
-	// 	if (err) {
-	// 		console.log(err);
-	// 		// Tell the client there was an error by sending back `null`
-	// 		return res.status(501).send(null);
-	// 	}
+	fs.readFile(postsPath, function (err, data) {
+		if (err) {
+			console.log(err);
+			return res.status(501).send(null);
+		}
 
-	// 	// Add the new post to the posts data array
-	// 	data = JSON.parse(data);
-	// 	data.posts.push(req.body);
+		data = JSON.parse(data);
+		// TODO: Test if already exists and return error code.
+		if (req.body.type === 'new') {
+			data.posts.push(req.body.post);
+		} else if (req.body.type === 'edit') {
+			data.posts[req.body.index] = req.body.post;
+		} else if (req.body.type === 'delete') {
+			data.posts.splice(req.body.index, 1);
+		}
 
-	// 	// Write the new data back to the file
-	// 	fs.writeFile(postsPath, JSON.stringify(data), function () {
-	// 		// Status 201 means "Request fulfilled, and a resource was created"
-	// 		res.status(201);
-	// 		// Send back the same data we received (best practice)
-	// 		res.send(req.body);
-	// 	});
-	// });
+		fs.writeFile(postsPath, JSON.stringify(data), function () {
+			res.status(201);
+			res.send(req.body);
+		});
+	});
 });
 
 // Handle GET request to get all posts data

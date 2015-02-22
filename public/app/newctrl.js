@@ -14,4 +14,8 @@ app.controller('NewCtrl', ['$scope', 'activeService', 'saveService',
 	};
 
 	$scope.save = saveService.save;
+
+	$scope.type = 'new';
+
+	$scope.index = null;
 }]);
