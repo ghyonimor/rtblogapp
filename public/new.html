@@ -60,6 +60,6 @@
 		<hr>
 
 		<button type="submit" class="btn btn-primary">Save Post</button>
-		<button ng-click="del(index)" class="btn btn-danger pull-right" ng-show="isEditMode()">Delete Post</button>
+		<button ng-click="del($event, index)" class="btn btn-danger pull-right" ng-show="isEditMode()">Delete Post</button>
 	</form>
 </section>

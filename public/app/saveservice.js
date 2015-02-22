@@ -35,7 +35,8 @@ app.factory('saveService', ['$http', function($http) {
 				index: index
 			});
 		},
-		del: function(index) {
+		del: function($event, index) {
+			$event.preventDefault();
 			$http.post('/posts', {
 				index: index,
 				type: 'delete'
