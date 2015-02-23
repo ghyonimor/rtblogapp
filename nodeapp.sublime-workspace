@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"tags",
+				"tagsRaw"
+			],
+			[
+				"post",
+				"postTitle"
+			],
+			[
 				"san",
 				"sanitize"
 			],
@@ -25,10 +33,6 @@
 			],
 			[
 				"posts",
-				"postsCache"
-			],
-			[
-				"post",
 				"postsCache"
 			],
 			[
@@ -496,26 +500,18 @@
 	"buffers":
 	[
 		{
-			"file": "public/app/saveservice.js",
+			"file": "public/app/postsctrl.js",
 			"settings":
 			{
-				"buffer_size": 545,
+				"buffer_size": 1650,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "server.js",
+			"file": "public/app/postsservice.js",
 			"settings":
 			{
-				"buffer_size": 1828,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "data/posts.json",
-			"settings":
-			{
-				"buffer_size": 4459,
+				"buffer_size": 224,
 				"line_ending": "Windows"
 			}
 		}
@@ -568,42 +564,42 @@
 		"/C/Users/yoni/Desktop/Projects/nodeapp/data",
 		"/C/Users/yoni/Desktop/Projects/nodeapp/modules",
 		"/C/Users/yoni/Desktop/Projects/nodeapp/public",
-		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app",
-		"/C/Users/yoni/Desktop/Projects/nodeapp/public/data/posts/md"
+		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app"
 	],
 	"file_history":
 	[
+		"/C/Users/yoni/Desktop/Projects/nodeapp/server.js",
 		"/C/Users/yoni/Desktop/Projects/nodeapp/data/posts.json",
-		"/C/Users/yoni/Desktop/Projects/nodeapp/data/posts - Copy.json",
-		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app/app.js",
+		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app/filtersctrl.js",
+		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app/filterposts.js",
+		"/C/Users/yoni/Desktop/Projects/nodeapp/public/posts.html",
+		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app/postsservice.js",
 		"/C/Users/yoni/Desktop/Projects/nodeapp/public/new.html",
+		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app/postctrl.js",
+		"/C/Users/yoni/Downloads/source/Gruntfile.js",
+		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app/saveservice.js",
+		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app/editctrl.js",
+		"/C/Users/yoni/Desktop/Projects/nodeapp/data/posts - Copy.json",
+		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app/newctrl.js",
+		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app/app.js",
 		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app/markdown.js",
 		"/C/Users/yoni/Desktop/Projects/nodeapp/.jshintrc",
-		"/C/Users/yoni/Desktop/Projects/nodeapp/server.js",
-		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app/editctrl.js",
 		"/C/Users/yoni/Desktop/Projects/nodeapp/public/index.html",
 		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app/adminctrl.js",
 		"/C/Users/yoni/Desktop/Projects/nodeapp/public/data/posts/md/AngularJS - Controllers.md",
 		"/C/Users/yoni/Desktop/Projects/nodeapp/Gruntfile.js",
 		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app/activeservice.js",
-		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app/saveservice.js",
-		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app/newctrl.js",
 		"/C/Users/yoni/Desktop/Projects/nodeapp/modules/data.js",
-		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app/postsservice.js",
 		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app/postsctrl.js",
 		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app/navservice.js",
 		"/C/Users/yoni/Desktop/Projects/nodeapp/data/nav.json",
 		"/C/Users/yoni/Downloads/source/examples/new.html",
 		"/C/Users/yoni/Desktop/Projects/nodeapp/data/users.json",
 		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app/sanitizeservice.js",
-		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app/filterposts.js",
-		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app/filtersctrl.js",
 		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app/navctrl.js",
-		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app/postctrl.js",
 		"/C/Users/yoni/Desktop/Projects/nodeapp/public/app/searchctrl.js",
 		"/C/Users/yoni/Desktop/Projects/nodeapp/public/admin.html",
 		"/C/Users/yoni/Desktop/Projects/nodeapp/public/post.html",
-		"/C/Users/yoni/Desktop/Projects/nodeapp/public/posts.html",
 		"/C/Users/yoni/Desktop/Projects/nodeapp/public/sidebar.html",
 		"/C/Users/yoni/Desktop/Projects/nodeapp/package.json",
 		"/C/Users/yoni/Downloads/solution/package.json",
@@ -699,8 +695,7 @@
 		"/C/Users/yoni/Desktop/Projects/Web-App-jQuery/src/scss/_nav.scss",
 		"/C/Users/yoni/Desktop/Projects/Web-App-jQuery/src/scss/_layout.scss",
 		"/C/Users/yoni/Desktop/Projects/Web-App-jQuery/src/scss/_init.scss",
-		"/C/Users/yoni/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/C/Users/yoni/Downloads/SCSS example files/_overrides.scss"
+		"/C/Users/yoni/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings"
 	],
 	"find":
 	{
@@ -864,24 +859,24 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "public/app/saveservice.js",
+					"file": "public/app/postsctrl.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 545,
+						"buffer_size": 1650,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								473,
-								473
+								374,
+								374
 							]
 						],
 						"settings":
@@ -893,58 +888,29 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "server.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1828,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1247,
-								1247
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 476.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "data/posts.json",
+					"buffer": 1,
+					"file": "public/app/postsservice.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4459,
+						"buffer_size": 224,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								224,
+								224
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

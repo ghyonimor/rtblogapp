@@ -6,7 +6,7 @@
 var app = angular.module('BlogApp');
 
 app.factory('postsService', ['$http', function($http) {
-	var getPosts = $http.get('posts');
+	var getPosts = $http.get('/posts');
 
 	return {
 		getPosts: getPosts

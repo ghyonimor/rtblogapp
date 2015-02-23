@@ -17,6 +17,8 @@ app.controller('PostsCtrl', ['$scope', '$filter', '$location', '$route','$routeP
 	promise.then(function(result) {
 		$scope.data = result.data;
 
+		console.log($scope.data);
+
 		if ($routeParams.param) {
 			$scope.currentPage = Number($routeParams.param);
 		} else {
@@ -63,4 +65,6 @@ app.controller('PostsCtrl', ['$scope', '$filter', '$location', '$route','$routeP
 	$scope.$on('$destroy', function(){
         activeService.data = null;
     });
+
+    console.log('PostsCtrl');
 }]);
