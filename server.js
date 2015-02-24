@@ -14,6 +14,8 @@ var postsPath = require('./modules/data');
 
 // Init a new Express app instance
 var app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 // Set the app port (used at the end with `listen`)
 app.set('port', 3000);
 
@@ -80,7 +82,11 @@ app.get('/posts', function (req, res) {
 // Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
 
+io.on('connection', function(socket){
+  console.log('a user connected');
+});
+
 // Start the server at a specific port
-app.listen(app.get('port'));
+http.listen(app.get('port'));
 
 console.log('Listening on: http://localhost:3000');

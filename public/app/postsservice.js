@@ -3,6 +3,9 @@
  */
 'use strict';
 
+var socket = io();
+console.log(socket);
+
 var app = angular.module('BlogApp');
 
 app.factory('postsService', ['$http', function($http) {
