@@ -84,6 +84,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 io.on('connection', function(socket){
   console.log('a user connected');
+  socket.on('disconnect', function(){
+    console.log('user disconnected');
+  });
+  socket.on('load post', function(post){
+    console.log('post: ' + post);
+    io.emit('load post', post);
+  });
 });
 
 // Start the server at a specific port

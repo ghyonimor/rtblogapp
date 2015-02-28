@@ -42,7 +42,15 @@ app.controller('PostsCtrl', ['$scope', '$filter', '$location', '$route','$routeP
 		};
 
 		$scope.x = $filter('filterPosts')($scope.data.posts, 'count').length;
+
+		console.log($scope.data);
 	});
+
+	socket.on('load post', function(post){
+	  console.log($scope.data.posts);
+	  console.log(post);
+      $scope.data.posts.push(post);
+    });
 
 	$scope.sanitize = sanitizeService.getUrl;
 

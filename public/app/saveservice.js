@@ -33,7 +33,14 @@ app.factory('saveService', ['$http', function($http) {
 				post: post,
 				type: type,
 				index: index
+			})
+			.success(function(){
+				socket.emit('load post', post);
+			    post = {};
+			    return false;
 			});
+
+
 		},
 		del: function($event, index) {
 			$event.preventDefault();

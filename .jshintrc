@@ -88,6 +88,6 @@
      "globals"       : {         // additional predefined global variables
         "angular": true,
         "marked": true,
-        "io": true
+        "socket": true
     }
 }
